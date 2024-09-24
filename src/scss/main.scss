@@ -1,0 +1,634 @@
+@import "_variables.scss";
+@import "_reset.scss";
+@import "_utilities.scss";
+@import "_fonts.scss";
+
+body {
+  background-color: $color-bg;
+  font-family: "Satoshi Regular";
+  color: $color-font-base;
+  letter-spacing: 1px;
+  overflow: hidden;
+}
+
+.cb-wrapper {
+  width: $wrapper-mobile;
+  margin: 0 auto;
+  border-left: 1px solid $color-border;
+  border-right: 1px solid $color-border;
+
+  @media screen and (min-width: $bp-desktop) {
+    width: $wrapper-desktop;
+  }
+}
+
+.cb-header {
+  width: $wrapper-mobile;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: rem(64);
+  position: relative;
+  border-bottom: 1px solid $color-border;
+  border-left: 1px solid $color-border;
+  border-right: 1px solid $color-border;
+  padding: 0 rem(24);
+
+  @media screen and (min-width: $bp-tablet) {
+    height: rem(80);
+    padding: 0 rem(80);
+  }
+
+  @media screen and (min-width: $bp-desktop) {
+    width: rem(1200);
+    padding: 0 rem(102);
+  }
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    left: rem(-2000);
+    bottom: -1px;
+    width: rem(2000);
+    border-bottom: 1px solid $color-border;
+  }
+
+  &::after {
+    right: rem(-2000);
+    left: auto;
+  }
+
+  &__logo {
+    width: rem(130);
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    font-size: rem(14);
+    text-transform: uppercase;
+    color: $color-font-info;
+  }
+
+  &__item {
+    height: rem(64);
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    @media screen and (min-width: $bp-tablet) {
+      height: rem(80);
+    }
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    color: $color-font-info;
+    padding: 0 rem(24);
+    height: inherit;
+    display: flex;
+    align-items: center;
+    letter-spacing: 2px;
+    word-spacing: 1px;
+
+    &:focus-visible {
+      outline: 1px solid $color-focus;
+      outline-offset: -1px;
+    }
+  }
+}
+
+.cb-main {
+  &__h1 {
+    font-family: "Satoshi light";
+    padding: rem(96) rem(24) rem(8);
+    color: $color-font-base;
+
+    @media screen and (min-width: $bp-tablet) {
+      padding: rem(96) rem(40) rem(8);
+    }
+
+    @media screen and (min-width: $bp-desktop) {
+      padding: rem(96) rem(104) rem(8);
+    }
+  }
+
+  &__h2 {
+    font-family: "Satoshi light";
+    padding: 0 rem(24) rem(26) rem(24);
+    font-size: rem(48);
+    line-height: rem(59);
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    color: $color-font-title;
+
+    @media screen and (min-width: $bp-tablet) {
+      padding: 0 rem(40) rem(26) rem(40);
+    }
+
+    @media screen and (min-width: $bp-desktop) {
+      padding: 0 rem(312) rem(26) rem(104);
+    }
+  }
+
+  &--h2-margin {
+    padding-bottom: rem(66);
+  }
+
+  &__p {
+    padding: 0 rem(24) rem(24) rem(24);
+
+    @media screen and (min-width: $bp-tablet) {
+      padding: 0 rem(40) rem(24) rem(40);
+    }
+
+    @media screen and (min-width: $bp-desktop) {
+      padding: 0 rem(616) rem(24) rem(104);
+    }
+  }
+
+  &__image-full {
+    padding-top: rem(64);
+    padding-bottom: rem(80);
+  }
+
+  &__cols {
+    display: flex;
+    margin-bottom: rem(248);
+    margin-top: rem(28);
+    flex-direction: column;
+
+    @media screen and (min-width: $bp-tablet) {
+
+    }
+
+    @media screen and (min-width: $bp-desktop) {
+      flex-direction: row;
+      border-top: 1px solid $color-border;
+      border-bottom: 1px solid $color-border;
+    }
+  }
+
+  &__cols-3 {
+    .cb-main__col {
+      width: calc(100% - 48px);
+      margin: 0 auto;
+
+      @media screen and (min-width: $bp-tablet) {
+        width: calc(100% - 80px);
+      }
+
+      @media screen and (min-width: $bp-desktop) {
+        width: 100%;
+        width: calc(100% / 3);
+        border-bottom: 0;
+      }
+    }
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 1px solid $color-border;
+    border-right: 1px solid $color-border;
+    border-top: 1px solid $color-border;
+
+    @media screen and (min-width: $bp-desktop) {
+      border-bottom: 0;
+      border-top: 0;
+      border-left: 0;
+    }
+
+    &:last-child {
+      border-bottom: 1px solid $color-border;
+
+      @media screen and (min-width: $bp-desktop) {
+        border-right: 0;
+        border-bottom: 0;
+      }
+    }
+  }
+
+  &__col-title {
+    text-decoration: none;
+    padding: rem(60) rem(64) rem(5);
+    letter-spacing: 2px;
+    font-size: rem(16);
+    text-transform: uppercase;
+    color: $color-font-info;
+  }
+
+  &__col-link {
+    text-decoration: none;
+    padding: 0 rem(64) rem(60);
+    display: flex;
+    font-size: rem(36);
+    font-family: "Satoshi light";
+    font-weight: 300;
+    color: $color-font-base;
+  }
+
+  &__col-text {
+    text-decoration: none;
+    padding: 0 rem(64) rem(60);
+    display: flex;
+    font-size: rem(24);
+    font-family: "Satoshi light";
+    font-weight: 300;
+    color: $color-font-base;
+
+    span span {
+      display: block;
+      color: $color-font-base;
+    }
+  }
+
+  &__col-icon {
+    width: rem(40);
+    height: rem(40);
+  }
+}
+
+/* combo box */
+.cb-combo *,
+.cb-combo *::before,
+.cb-combo *::after {
+  box-sizing: border-box;
+}
+
+.cb-combo {
+  display: block;
+  max-width: 400px;
+  // position: relative;
+
+  &::after {
+    border-bottom: 1px solid $color-font-base;
+    border-right: 1px solid $color-font-base;
+    content: "";
+    display: block;
+    height: rem(8);
+    pointer-events: none;
+    position: absolute;
+    right: rem(5);
+    top: 50%;
+    transform: translate(0, -65%) rotate(45deg);
+    width: rem(8);
+  }
+
+  &__input {
+    background-color: transparent;
+    display: block;
+    text-align: left;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    height: rem(64);
+    cursor: pointer;
+    padding: 0 24px;
+
+    @media screen and (min-width: $bp-tablet) {
+      height: rem(80);
+    }
+
+    &:focus-visible {
+      outline: 1px solid $color-focus;
+      outline-offset: -1px;
+    }
+  }
+
+  &__label {
+    display: block;
+    margin-right: rem(32);
+    margin: 0 rem(32) 0 rem(24);
+    letter-spacing: 2px;
+    word-spacing: 1px;
+  }
+
+  &__menu {
+    background-color: $color-primary;
+    border-top: 0;
+    display: none;
+    max-height: 300px;
+    overflow-y: auto;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    width: rem(400);
+    z-index: 100;
+  }
+
+  &__option {
+    padding: rem(20) rem(24);
+    text-transform: none;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    color: $color-font-info;
+    font-size: rem(20);
+    font-family: "Satoshi Light";
+    letter-spacing: 2px;
+    word-spacing: 1px;
+
+    &:hover {
+      background-color: $color-tertiary;
+    }
+
+    &:focus-visible {
+      outline: 1px solid $color-focus;
+      outline-offset: -1px;
+    }
+
+    &.option__current {
+      background-color: $color-tertiary;
+    }
+  }
+}
+
+.open {
+  .cb-combo__menu {
+    display: block;
+  }
+}
+
+/* buttons */
+[role="button"] {
+  display: inline-block;
+  position: relative;
+  padding: 0.4em 0.7em;
+  border-radius: 5px;
+  color: #fff;
+  background-color: $color-secundary;
+}
+
+[role="button"]:hover {
+  background-color: $color-secundary;
+  cursor: default;
+}
+
+[role="button"]:focus {
+  outline: none;
+}
+
+[role="button"]:focus::before {
+  position: absolute;
+
+  /* button border width - outline width - offset */
+  top: calc(-1px - 3px - 3px);
+  right: calc(-1px - 3px - 3px);
+  bottom: calc(-1px - 3px - 3px);
+  left: calc(-1px - 3px - 3px);
+
+  /* button border radius + outline width + offset */
+  border-radius: calc(5px + 3px + 3px);
+  content: "";
+}
+
+[role="button"]:active {
+  background-color: $color-secundary;
+}
+
+[role="button"][aria-pressed] {
+  background-color: $color-secundary;
+}
+
+[role="button"][aria-pressed]:hover {
+  background-color: $color-secundary;
+}
+
+[role="button"][aria-pressed="true"] {
+  padding-top: 0.5em;
+  padding-bottom: 0.3em;
+  background-color: $color-secundary;
+}
+
+[role="button"][aria-pressed="true"]:hover {
+  background-color: $color-secundary;
+}
+
+[role="button"][aria-pressed]:focus::before {
+}
+
+[role="button"] svg {
+  margin: 0.15em auto -0.15em;
+  height: 1em;
+  width: 1em;
+  pointer-events: none;
+}
+
+.cb-button {
+  text-transform: uppercase;
+  font-size: rem(16);
+  font-family: "Satoshi Medium";
+  border-radius: rem(24);
+  padding: rem(8) rem(24);
+  letter-spacing: 1px;
+  word-spacing: 1px;
+}
+
+/* Carousel */
+.cb-carousel {
+  margin-bottom: rem(80);
+
+  @media screen and (min-width: $bp-desktop) {
+    height: rem(570);
+  }
+
+  &::before {
+    content: '';
+    height: rem(627);
+    width: rem(6000);
+    background-color: $color-primary;
+    position: absolute;
+    right: calc(50% - 600px);
+    top: rem(80);
+  }
+
+  &::after {
+    content: '';
+    border-left: 1px solid $color-border;
+    border-right: 1px solid $color-border;
+    width: $bp-desktop;
+    height: calc(100% + 150px);
+    position: absolute;
+    top: 0;
+    margin-left: calc(50% - 600px);
+    display: none;
+
+    @media screen and (min-width: $bp-desktop) {
+      display: block;
+    }
+  }
+
+  .slick-list {
+    margin-left: rem(48);
+
+    @media screen and (min-width: $bp-tablet) {
+      margin-left: calc(50% - 290px);
+    }
+  }
+
+  .slick-slide {
+    padding: 0 rem(18);
+
+    img {
+      width: rem(380);
+    }
+  }
+
+  .slick-arrow {
+    position: absolute;
+    bottom: rem(13);
+    font-size: 0;
+    line-height: 0;
+    z-index: 2;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+
+    @media screen and (min-width: $bp-tablet) {
+      height: auto;
+      width: auto;
+      overflow: visible;
+    }
+
+    &:before {
+      content: "";
+      font-family: "slick";
+      font-size: 20px;
+      line-height: 1;
+      opacity: 0.75;
+      color: $color-font-base;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      border: 1px solid $color-border-secondary;
+      border-radius: 100%;
+      padding: rem(11) rem(12);
+      background-color: $color-bg;
+    }
+  }
+
+  .slick-prev {
+    left: calc(50% - 476px);
+  }
+
+  .slick-next {
+    left: calc(50% - 410px);
+  }
+
+  .slick-prev:before {
+    content: "←";
+
+  }
+  .slick-next:before {
+    content: "→";
+  }
+}
+
+
+
+
+/* Banner */
+
+.cb-banner {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  background-color: $color-primary;
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+  align-items: center;
+  position: relative;
+
+  &::after {
+    content: '';
+    border-left: 1px solid $color-border;
+    border-right: 1px solid $color-border;
+    width: $bp-desktop;
+    height: calc(100% + 150px);
+    position: absolute;
+    top: 0;
+  }
+
+  &__img {
+    width: rem(100);
+  }
+
+  &__title {
+    margin-left: rem(24);
+    width: rem(486);
+    font-family: "Satoshi light";
+    font-size: rem(36);
+    line-height: rem(48);
+    letter-spacing: 1px;
+    font-weight: 300;
+
+    span {
+      display: block;
+    }
+  }
+}
+
+
+.cb-card {
+  display: flex;
+  background-color: $color-tertiary;
+  margin-top: rem(80);
+  flex-direction: column;
+
+  @media screen and (min-width: $bp-desktop) {
+    flex-direction: row;
+  }
+
+  &__title {
+    font-size: rem(48);
+    margin: rem(78) rem(24) rem(16);
+    font-family: "Satoshi light";
+    font-weight: 400;
+
+    @media screen and (min-width: $bp-tablet) {
+      margin: rem(78) rem(40) rem(16);
+    }
+
+    @media screen and (min-width: $bp-desktop) {
+      margin: rem(78) rem(103) rem(16);
+    }
+  }
+
+  &__text {
+    width: 100%;
+    margin-bottom: rem(78);
+
+    @media screen and (min-width: $bp-desktop) {
+      margin-bottom: 0;
+      width: 50%;
+    }
+
+    p {
+      margin: 0 rem(24);
+      font-size: rem(20);
+      line-height: rem(32);
+      font-family: "Satoshi light";
+      font-weight: 400;
+      color: $color-font-title;
+
+      @media screen and (min-width: $bp-tablet) {
+        margin: 0 rem(40);
+      }
+
+      @media screen and (min-width: $bp-desktop) {
+        margin: 0 rem(103);
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+
+    @media screen and (min-width: $bp-desktop) {
+      width: 50%;
+    }
+  }
+}

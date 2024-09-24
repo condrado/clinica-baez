@@ -1,0 +1,44 @@
+@mixin grid {
+  .main-content {
+      display:grid;
+      /* Set up grid stuff */
+  }
+  header{
+      grid-area: header;
+  }   
+}
+
+/*
+@include image('https://mi-web/header_logo.svg', 100px, 300px);
+*/
+@mixin image( $imgpath, $height, $width: 100%, $display: inline-block, $bg-size: contain, $bg-pos: center) {
+  background-image: url('#{$imgpath}');
+  background-position: $bg-pos;
+  background-repeat: no-repeat;
+  background-size: $bg-size;
+  content: '';
+  display: $display;
+  height: $height;
+  width: $width;
+}
+
+/*
+.title {
+  @include font (#00FF41, 25px, 400, italic, Menlo);
+}
+
+.title-2 {
+  @include font (#00FF41, 25px, $font-family: Menlo);
+}
+*/
+@mixin font ($color, $font-size, $font-weight: 400, $font-style: normal, $font-family: 'Open sans') {
+  color: $color;
+  font: $font-style $font-weight $font-size $font-family;
+}
+
+@function stripUnit($value) {
+  @return $value / ($value * 0 + 1);
+}
+@function rem($pxValue) {
+  @return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
+}
