@@ -5,7 +5,7 @@
   "scripts": {
     "scss": "node-sass --output-style compressed -o ./dist/css ./src/scss",
     "js": "babel ./src/js -d ./dist/js",
-    "copy-html": "copyfiles -u 1 src/**/*.html dist/",
+    "copy-html": "copyfiles -u 1 src/**/*.html dist/ && copyfiles -u 1 src/index.html dist/",
     "copy-assets": "copyfiles -u 1 src/assets/**/* dist/",
     "build": "npm run clean-html-dist && npm run scss && npm run js && npm run copy-html && npm run copy-assets",
     "start": "npm run build && browser-sync start --server dist --files 'dist/**/*'",

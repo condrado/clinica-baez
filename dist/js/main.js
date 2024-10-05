@@ -417,5 +417,13 @@ function carousel() {
     variableWidth: true
   });
 }
+function menuMobile(params) {
+  var btnMenu = document.querySelector('.cb-button__menu');
+  var menu = document.querySelector('.cb-header__nav');
+  btnMenu.addEventListener('click', e => {
+    menu.classList.toggle('open');
+  });
+}
+menuMobile();
 combobox();
 carousel();

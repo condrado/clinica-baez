@@ -445,5 +445,16 @@ function carousel() {
   });
 }
 
+function menuMobile(params) {
+  const btnMenu = document.querySelector('.cb-button__menu');
+  const menu = document.querySelector('.cb-header__nav');
+
+  btnMenu.addEventListener('click', (e) => {
+    menu.classList.toggle('open');
+  })
+}
+
+menuMobile();
 combobox();
 carousel();
+

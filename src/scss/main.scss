@@ -14,11 +14,12 @@ body {
 .cb-wrapper {
   width: $wrapper-mobile;
   margin: 0 auto;
-  border-left: 1px solid $color-border;
-  border-right: 1px solid $color-border;
+
 
   @media screen and (min-width: $bp-desktop) {
     width: $wrapper-desktop;
+    border-left: 1px solid $color-border;
+    border-right: 1px solid $color-border;
   }
 }
 
@@ -34,7 +35,7 @@ body {
   border-left: 1px solid $color-border;
   border-right: 1px solid $color-border;
   padding: 0 rem(24);
-
+  
   @media screen and (min-width: $bp-tablet) {
     height: rem(80);
     padding: 0 rem(80);
@@ -62,6 +63,21 @@ body {
 
   &__logo {
     width: rem(130);
+    display: none;
+
+    @media screen and (min-width: $bp-tablet) {
+      display: block;
+    }
+  }
+
+  &__logo-basic {
+    width: rem(24);
+    display: block;
+    position: relative;
+
+    @media screen and (min-width: $bp-tablet) {
+      display: none;
+    }
   }
 
   &__list {
@@ -70,16 +86,29 @@ body {
     font-size: rem(14);
     text-transform: uppercase;
     color: $color-font-info;
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+
+    @media screen and (min-width: $bp-tablet) {
+      flex-direction: row;
+      width: auto;
+    }
   }
 
   &__item {
-    height: rem(64);
+    min-height: rem(64);
     display: flex;
     align-items: center;
     position: relative;
+    border-top: 1px solid $color-border;
 
     @media screen and (min-width: $bp-tablet) {
       height: rem(80);
+    }
+
+    &:first-child {
+      border-top: 0;
     }
   }
 
@@ -92,10 +121,98 @@ body {
     align-items: center;
     letter-spacing: 2px;
     word-spacing: 1px;
+    font-size: rem(32);
+    font-family: 'Satoshi Light';
+    
+    @media screen and (min-width: $bp-tablet) {
+      font-size: rem(14);
+      font-family: 'Satoshi Regular';
+    }
 
     &:focus-visible {
       outline: 1px solid $color-focus;
       outline-offset: -1px;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    right: 0;
+    top: rem(64);
+    width: 100%;
+    background-color: $color-primary;
+    display: none;
+
+    @media screen and (min-width: $bp-tablet) {
+      position: static;
+      width: auto;
+      background-color: transparent;
+      display: block;
+    }
+
+    &.open {
+      display: block;
+    }
+  }
+
+  &__col1 {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: rem(64);
+      right: rem(-24);
+      top: rem(-20);
+      border-right: 1px solid $color-border;
+      
+      @media screen and (min-width: $bp-tablet) {
+        border-right: 0;
+      }
+    }
+  }
+
+  &--item-mobile {
+    height: auto;
+    border-top: 0;
+
+    @media screen and (min-width: $bp-tablet) {
+      display: none;
+    }
+
+    .cb-main__col {
+      width: 100%;
+      border-bottom: 0;
+      border-right: 0;
+      border-left: 0;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    .cb-main__col-title {
+      padding-top: rem(40);
+    }
+
+    .cb-main__col-link {
+      padding-bottom: rem(40);
+    }
+  }
+
+  .cb-button {
+    display: none;
+
+    @media screen and (min-width: $bp-tablet) {
+      display: inline-block;
+    }
+  }
+
+  .cb-button__menu {
+    display: inline-block;
+
+    @media screen and (min-width: $bp-tablet) {
+      display: none;
     }
   }
 }
@@ -172,6 +289,8 @@ body {
   }
 
   &__cols-3 {
+    margin-bottom: rem(60);
+
     .cb-main__col {
       width: calc(100% - 48px);
       margin: 0 auto;
@@ -186,6 +305,60 @@ body {
         width: calc(100% / 3);
         border-bottom: 0;
       }
+    }
+  }
+
+  &__cols-2 {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    @media screen and (min-width: $bp-desktop) {
+      border-top: 0;
+      border-bottom: 0;
+    }
+
+    .cb-main__col {
+      width: calc(100% - 48px);
+      margin: 0 auto;
+      justify-content: center;
+      align-items: center;
+      border-top: 0;
+
+      @media screen and (min-width: $bp-tablet) {
+        width: calc(100% - 80px);
+      }
+
+      @media screen and (min-width: $bp-desktop) {
+        width: 100%;
+        width: calc(100% / 2);
+        border-bottom: 0;
+      }
+
+      &:last-child {
+        border-top: 1px solid $color-border;
+        border-bottom: 0;
+
+        @media screen and (min-width: $bp-desktop) {
+          border-top: 0;
+        }
+      }
+    }
+
+    .cb-main__col-link {
+      font-size: rem(24);
+
+      .cb-main__col-icon {
+        width: rem(40);
+        height: rem(40);
+        padding: 0;
+      }
+    }
+    
+    .cb-main__col-icon {
+      width: 80%;
+      height: auto;
+      padding: rem(60) 0;
+      fill: #E3E3E3;
     }
   }
 
@@ -274,8 +447,18 @@ body {
 
 .cb-combo {
   display: block;
-  max-width: 400px;
-  // position: relative;
+  width: 100%;
+
+  &.open {
+    .cb-combo__menu {
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: $bp-tablet) {
+    height: rem(80);
+    max-width: 400px;
+  }
 
   &::after {
     border-bottom: 1px solid $color-font-base;
@@ -285,10 +468,15 @@ body {
     height: rem(8);
     pointer-events: none;
     position: absolute;
-    right: rem(5);
-    top: 50%;
+    right: rem(32);
+    top: rem(32);
     transform: translate(0, -65%) rotate(45deg);
     width: rem(8);
+
+    @media screen and (min-width: $bp-tablet) {
+      top: 50%;
+      right: rem(5);
+    }
   }
 
   &__input {
@@ -313,11 +501,21 @@ body {
   }
 
   &__label {
-    display: block;
+    display: flex;
     margin-right: rem(32);
     margin: 0 rem(32) 0 rem(24);
     letter-spacing: 2px;
     word-spacing: 1px;
+    align-items: center;
+    min-height: rem(64);
+    font-size: rem(32);
+    font-family: 'Satoshi Light';
+
+    @media screen and (min-width: $bp-tablet) {
+      font-size: rem(14);
+      font-family: "Satoshi Regular";
+      min-height: rem(80);
+    }
   }
 
   &__menu {
@@ -327,10 +525,16 @@ body {
     max-height: 300px;
     overflow-y: auto;
     left: 0;
-    position: absolute;
+    
     top: 100%;
-    width: rem(400);
+    width: 100%;
     z-index: 100;
+    position: static;
+
+    @media screen and (min-width: $bp-tablet) {
+      width: rem(400);
+      position: absolute;
+    }
   }
 
   &__option {
@@ -360,12 +564,6 @@ body {
   }
 }
 
-.open {
-  .cb-combo__menu {
-    display: block;
-  }
-}
-
 /* buttons */
 [role="button"] {
   display: inline-block;
@@ -374,61 +572,61 @@ body {
   border-radius: 5px;
   color: #fff;
   background-color: $color-secundary;
-}
 
-[role="button"]:hover {
-  background-color: $color-secundary;
-  cursor: default;
-}
+  &:hover {
+    background-color: $color-secundary;
+    cursor: pointer;
+  }
 
-[role="button"]:focus {
-  outline: none;
-}
+  &:focus {
+    outline: none;
+  }
 
-[role="button"]:focus::before {
-  position: absolute;
+  &:focus::before {
+    position: absolute;
+  
+    /* button border width - outline width - offset */
+    top: calc(-1px - 3px - 3px);
+    right: calc(-1px - 3px - 3px);
+    bottom: calc(-1px - 3px - 3px);
+    left: calc(-1px - 3px - 3px);
+  
+    /* button border radius + outline width + offset */
+    border-radius: calc(5px + 3px + 3px);
+    content: "";
+  }
 
-  /* button border width - outline width - offset */
-  top: calc(-1px - 3px - 3px);
-  right: calc(-1px - 3px - 3px);
-  bottom: calc(-1px - 3px - 3px);
-  left: calc(-1px - 3px - 3px);
+  &:active {
+    background-color: $color-secundary;
+  }
 
-  /* button border radius + outline width + offset */
-  border-radius: calc(5px + 3px + 3px);
-  content: "";
-}
+  &[aria-pressed] {
+    background-color: $color-secundary;
+  }
 
-[role="button"]:active {
-  background-color: $color-secundary;
-}
+  &[aria-pressed]:hover {
+    background-color: $color-secundary;
+  }
 
-[role="button"][aria-pressed] {
-  background-color: $color-secundary;
-}
+  &[aria-pressed="true"] {
+    padding-top: 0.5em;
+    padding-bottom: 0.3em;
+    background-color: $color-secundary;
+  }
 
-[role="button"][aria-pressed]:hover {
-  background-color: $color-secundary;
-}
+  &[aria-pressed="true"]:hover {
+    background-color: $color-secundary;
+  }
 
-[role="button"][aria-pressed="true"] {
-  padding-top: 0.5em;
-  padding-bottom: 0.3em;
-  background-color: $color-secundary;
-}
+  &[aria-pressed]:focus::before {
+  }
 
-[role="button"][aria-pressed="true"]:hover {
-  background-color: $color-secundary;
-}
-
-[role="button"][aria-pressed]:focus::before {
-}
-
-[role="button"] svg {
-  margin: 0.15em auto -0.15em;
-  height: 1em;
-  width: 1em;
-  pointer-events: none;
+  svg {
+    margin: 0.15em auto -0.15em;
+    height: 1em;
+    width: 1em;
+    pointer-events: none;
+  }
 }
 
 .cb-button {
@@ -439,11 +637,49 @@ body {
   padding: rem(8) rem(24);
   letter-spacing: 1px;
   word-spacing: 1px;
+
+  &__menu {
+    background-image: url('../assets/img/icon-24-burger-menu.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: rem(64);
+    height: rem(64);
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+
+    &[role="button"][aria-pressed] {
+      background-color: transparent;
+    }
+
+    .cb-button--open-text,
+    .cb-button--close-text {
+      font-size: 1px;
+      color: $color-bg;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: rem(64);
+      left: 0;
+      top: 0;
+      border-left: 1px solid $color-border;
+      
+      @media screen and (min-width: $bp-tablet) {
+        border-left: 0;
+      }
+    }
+  }
 }
 
 /* Carousel */
 .cb-carousel {
-  margin-bottom: rem(80);
+  margin-bottom: rem(136);
 
   @media screen and (min-width: $bp-desktop) {
     height: rem(570);
@@ -679,5 +915,19 @@ body {
     padding: 0;
     list-style: none;
     font-family: "Satoshi Regular";
+  }
+}
+
+.cb-footer {
+  background-color: $color-primary;
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+
+  &__copy {
+    border-top: 1px solid $color-border;
+    border-bottom: 1px solid $color-border;
+    text-align: center;
+    width: 100%;
+    padding: rem(24) 0;
   }
 }
