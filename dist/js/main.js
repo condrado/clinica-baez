@@ -395,7 +395,7 @@ function combobox() {
   window.addEventListener("load", function () {
     var options = [{
       title: "Cirugía y tratamiento de juanetes",
-      url: "page-2.html"
+      url: "tratamientos/cirugia-podologica.html"
     }, {
       title: "Tratamiento de papilomas",
       url: "page-2.html"
