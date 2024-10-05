@@ -441,7 +441,18 @@ function carousel() {
     infinite: false,
     slidesToShow: 2,
     slidesToScroll: 1,
-    variableWidth: true
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          arrows: false,
+          infinite: true,
+          centerPadding: '40px',
+          slidesToShow: 3
+        }
+      },
+    ]
   });
 }
 
