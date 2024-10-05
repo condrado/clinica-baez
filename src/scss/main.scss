@@ -237,11 +237,13 @@ body {
 .cb-main {
   &__h1 {
     font-family: "Satoshi light";
-    padding: rem(96) rem(24) rem(8);
+    padding: rem(48) rem(24) rem(8);
     color: $color-font-base;
+    font-size: rem(16);
 
     @media screen and (min-width: $bp-tablet) {
       padding: rem(96) rem(40) rem(8);
+      font-size: rem(32);
     }
 
     @media screen and (min-width: $bp-desktop) {
@@ -257,9 +259,11 @@ body {
     letter-spacing: 1px;
     word-spacing: 1px;
     color: $color-font-title;
+    font-size: rem(24);
 
     @media screen and (min-width: $bp-tablet) {
       padding: 0 rem(40) rem(26) rem(40);
+      font-size: rem(48);
     }
 
     @media screen and (min-width: $bp-desktop) {
@@ -844,17 +848,26 @@ body {
   }
 
   &__img {
-    width: rem(100);
+    width: rem(72);
+
+    @media screen and (min-width: $bp-tablet) {
+      width: rem(100);
+    }
   }
 
   &__title {
     margin-left: rem(24);
     width: rem(486);
     font-family: "Satoshi light";
-    font-size: rem(36);
-    line-height: rem(48);
+    font-size: rem(20);
+    line-height: rem(24);
     letter-spacing: 1px;
     font-weight: 300;
+
+    @media screen and (min-width: $bp-tablet) {
+      font-size: rem(36);
+      line-height: rem(48);
+    }
 
     span {
       display: block;
@@ -874,13 +887,15 @@ body {
   }
 
   &__title {
-    font-size: rem(48);
+    font-size: rem(24);
     margin: rem(78) rem(24) rem(16);
-    font-family: "Satoshi light";
+    font-family: "Satoshi Regular";
     font-weight: 400;
+    color: $color-font-title;
 
     @media screen and (min-width: $bp-tablet) {
       margin: rem(78) rem(40) rem(16);
+      font-size: rem(48);
     }
 
     @media screen and (min-width: $bp-desktop) {
@@ -904,7 +919,7 @@ body {
       line-height: rem(32);
       font-family: "Satoshi light";
       font-weight: 400;
-      color: $color-font-title;
+      color: $color-font-base;
 
       @media screen and (min-width: $bp-tablet) {
         margin: 0 rem(40);
