@@ -23,6 +23,7 @@ function combobox() {
     Type: 10,
   };
 
+  const popo = 0;
   /*
    * Helper functions
    */
@@ -437,7 +438,7 @@ function combobox() {
 
 function carousel() {
   $('.cb-carousel').slick({
-    infinite: true,
+    infinite: false,
     slidesToShow: 2,
     slidesToScroll: 1,
     variableWidth: true

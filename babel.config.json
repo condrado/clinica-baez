@@ -1,0 +1,13 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env", 
+      {
+        "targets": {
+          "esmodules": true,   // O cualquier otro target de navegador o Node.js
+          "node": "current"    // Si estás utilizando Node.js moderno
+        }
+      }
+    ]
+  ]
+}
