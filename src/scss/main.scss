@@ -415,16 +415,20 @@ body {
 
   &__col-title {
     text-decoration: none;
-    padding: rem(60) rem(64) rem(5);
+    padding: rem(60) rem(24) rem(5);
     letter-spacing: 2px;
     font-size: rem(16);
     text-transform: uppercase;
     color: $color-font-info;
+
+    @media screen and (min-width: $bp-tablet) {
+      padding: rem(60) rem(64) rem(5);
+    }
   }
 
   &__col-link {
     text-decoration: none;
-    padding: 0 rem(64) rem(60);
+    padding: 0 rem(24) rem(60);
     display: flex;
     font-size: rem(36);
     font-family: "Satoshi light";
@@ -433,6 +437,10 @@ body {
     align-items: center;
     letter-spacing: 0px;
 
+    @media screen and (min-width: $bp-tablet) {
+      padding: 0 rem(64) rem(60);
+    }
+
     .cb-main__col-icon {
       margin-right: rem(8);
     }
@@ -440,12 +448,16 @@ body {
 
   &__col-text {
     text-decoration: none;
-    padding: 0 rem(64) rem(60);
+    padding: 0 rem(24) rem(60);
     display: flex;
     font-size: rem(24);
     font-family: "Satoshi light";
     font-weight: 300;
     color: $color-font-base;
+
+    @media screen and (min-width: $bp-tablet) {
+      padding: 0 rem(64) rem(60);
+    }
 
     span span {
       display: block;
