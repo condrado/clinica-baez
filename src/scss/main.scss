@@ -69,13 +69,14 @@ body {
   justify-content: space-between;
   align-items: center;
   height: rem(64);
-  position: relative;
+  position: fixed;
   border-top: 1px solid $color-border;
   border-bottom: 1px solid $color-border;
   border-left: 1px solid $color-border;
   border-right: 1px solid $color-border;
   padding: 0 rem(24);
   z-index: 6;
+  background-color: $color-bg;
   
   @media screen and (min-width: $bp-tablet) {
     height: rem(80);
@@ -282,6 +283,12 @@ body {
 }
 
 .cb-main {
+  margin-top: rem(64);
+
+  @media screen and (min-width: $bp-tablet) {
+    margin-top: rem(80);
+  }
+
   &__h1 {
     font-family: "Satoshi light";
     padding: rem(48) rem(24) rem(8);
