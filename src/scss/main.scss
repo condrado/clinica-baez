@@ -1130,7 +1130,7 @@ body {
 .cb-accordion__title {
   display: block;
   pointer-events: none;
-  padding: rem(36);
+  padding: rem(36) rem(80) rem(36) rem(36);
   outline: none;
   font-size: rem(24);
   color: $color-font-title;
@@ -1138,6 +1138,7 @@ body {
 
   @media screen and (min-width: $bp-tablet) {
     font-size: rem(32);
+    padding: rem(36);
   }
 }
 
