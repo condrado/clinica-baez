@@ -446,6 +446,7 @@ function carousel() {
       {
         breakpoint: 1024,
         settings: {
+          centerMode: true,
           arrows: false,
           infinite: true,
           centerPadding: '40px',
