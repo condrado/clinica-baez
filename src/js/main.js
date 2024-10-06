@@ -462,7 +462,9 @@ function menuMobile(params) {
   const menu = document.querySelector('.cb-header__nav');
 
   btnMenu.addEventListener('click', (e) => {
+    const btn = e.target;
     menu.classList.toggle('open');
+    btn.classList.toggle('open');
   })
 }
 

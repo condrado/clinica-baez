@@ -94,10 +94,12 @@ body {
     flex-direction: column;
     padding: 0;
     width: 100%;
+    border-bottom: 1px solid $color-border;
 
     @media screen and (min-width: $bp-tablet) {
       flex-direction: row;
       width: auto;
+      border-bottom: 0;
     }
   }
 
@@ -143,16 +145,18 @@ body {
   &__nav {
     position: absolute;
     right: 0;
-    top: rem(64);
+    top: rem(62);
     width: 100%;
     background-color: $color-primary;
     display: none;
+    border-top: 1px solid $color-border;
 
     @media screen and (min-width: $bp-tablet) {
       position: static;
       width: auto;
       background-color: transparent;
       display: block;
+      border-top: 0;
     }
 
     &.open {
@@ -184,7 +188,7 @@ body {
       position: absolute;
       height: rem(64);
       right: rem(-24);
-      top: rem(-20);
+      top: rem(-21);
       border-right: 1px solid $color-border;
       
       @media screen and (min-width: $bp-tablet) {
@@ -490,6 +494,16 @@ body {
     .cb-combo__menu {
       display: block;
     }
+
+    &::after {
+      transform: translate(0, -65%) rotate(225deg);
+      top: rem(36);
+
+      @media screen and (min-width: $bp-tablet) {
+        transform: translate(0, -65%) rotate(45deg);
+        top: rem(40);
+      }
+    }
   }
 
   @media screen and (min-width: $bp-tablet) {
@@ -680,7 +694,7 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     width: rem(64);
-    height: rem(64);
+    height: rem(63);
     position: absolute;
     right: 0;
     top: 0;
@@ -688,7 +702,15 @@ body {
 
     &[role="button"][aria-pressed] {
       background-color: transparent;
+
+      &.open {
+        background-color: $color-primary;
+        border-bottom: 1px solid $color-border;
+        background-image: url('../assets/img/icon-24-close.svg');
+      }
     }
+
+
 
     .cb-button--open-text,
     .cb-button--close-text {
@@ -704,7 +726,7 @@ body {
       position: absolute;
       height: rem(64);
       left: 0;
-      top: 0;
+      top: rem(-1);
       border-left: 1px solid $color-border;
       
       @media screen and (min-width: $bp-tablet) {
