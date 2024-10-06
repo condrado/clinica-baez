@@ -196,6 +196,7 @@ body {
     border-top: 1px solid $color-border;
     overflow-y: scroll;
     height: calc(100vh - 62px);
+    height: calc(100dvh - 62px);
 
     @media screen and (min-width: $bp-tablet) {
       position: static;
