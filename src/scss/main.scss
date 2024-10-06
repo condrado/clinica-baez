@@ -1132,9 +1132,13 @@ body {
   pointer-events: none;
   padding: rem(36);
   outline: none;
-  font-size: rem(32);
+  font-size: rem(24);
   color: $color-font-title;
   font-family: "Satoshi Regular";
+
+  @media screen and (min-width: $bp-tablet) {
+    font-size: rem(32);
+  }
 }
 
 .cb-accordion__trigger {
