@@ -469,11 +469,13 @@ function carousel() {
 function menuMobile(params) {
   const btnMenu = document.querySelector(".cb-button__menu");
   const menu = document.querySelector(".cb-header__nav");
+  const html = document.querySelector("html");
 
   btnMenu.addEventListener("click", (e) => {
     const btn = e.target;
     menu.classList.toggle("open");
     btn.classList.toggle("open");
+    html.classList.toggle("block");
   });
 }
 

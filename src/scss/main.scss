@@ -13,7 +13,9 @@
 }
 
 html {
-  overflow: hidden;
+  &.block {
+    overflow: hidden;
+  }
 }
 
 body {
