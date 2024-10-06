@@ -3,6 +3,15 @@
 @import "_utilities.scss";
 @import "_fonts.scss";
 
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: $color-bg;
   font-family: "Satoshi Regular";
@@ -15,11 +24,41 @@ body {
   width: $wrapper-mobile;
   margin: 0 auto;
 
-
   @media screen and (min-width: $bp-desktop) {
     width: $wrapper-desktop;
     border-left: 1px solid $color-border;
     border-right: 1px solid $color-border;
+  }
+
+  &--grey {
+    background-color: $color-primary;
+    position: relative;
+    padding-bottom: rem(48);
+    border-bottom: 1px solid $color-border;
+
+    @media screen and (min-width: $bp-tablet) {
+      padding-bottom: rem(96);
+    }
+
+    &::after,
+    &::before {
+      content: '';
+      width: rem(20000);
+      height: calc(100% + 1px);
+      position: absolute;
+      top: 0;
+      z-index: -1;
+      background-color: $color-primary;
+      border-bottom: 1px solid $color-border;
+    }
+
+    &::after {
+      left: rem(-20000);
+    }
+  
+    &::before {
+      right:rem(-20000);
+    }
   }
 }
 
@@ -1011,4 +1050,174 @@ body {
     width: 100%;
     padding: rem(24) 0;
   }
+}
+
+
+.cb-accordion {
+  margin: 0;
+  padding: 0;
+  width: 60%;
+  position: relative;
+  height: fit-content;
+  border-top: 1px solid $color-border;
+
+  &::before {
+    content: '';
+    width: rem(20000);
+    height: calc(100% + 1px);
+    position: absolute;
+    top: -1px;
+    z-index: -1;
+    background-color: $color-bg;
+    border-top: 1px solid $color-border;
+    border-bottom: 1px solid $color-border;
+  }
+
+  &::before {
+    right:rem(-20000);
+  }
+}
+
+.cb-accordion h3 {
+  margin: 0;
+  padding: 0;
+  background-color: $color-bg;
+}
+
+.cb-accordion h3:first-child {
+  border-top: 0;
+}
+
+// .cb-accordion:focus-within {
+//   border-color: red;
+// }
+
+// .cb-accordion:focus-within h3 {
+//   background-color: red;
+// }
+
+.cb-accordion__group {
+  display: flex;
+  padding: rem(90) 0 rem(90);
+  position: relative;
+  // background-color: $color-primary;
+
+  &::before {
+    content: '';
+    height: rem(500);
+    width: rem(60000);
+    background-color: $color-primary;
+    position: absolute;
+    right: calc(50% - 30000px);
+    top: rem(400);
+    z-index: -1;
+  
+    @media screen and (min-width: $bp-tablet) {
+      height: rem(500);
+    }
+  }
+}
+
+
+
+.cb-accordion__title {
+  display: block;
+  pointer-events: none;
+  padding: rem(36);
+  outline: none;
+  font-size: rem(32);
+  color: $color-font-title;
+  font-family: "Satoshi Regular";
+}
+
+.cb-accordion__trigger {
+  background: none;
+  color: red;
+  display: block;
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  outline: none;
+  border-bottom: 1px solid $color-border;
+}
+
+// .cb-accordion__trigger:focus,
+// .cb-accordion__trigger:hover {
+//   background: red;
+// }
+
+.cb-accordion__trigger:focus {
+  outline: 4px solid transparent;
+}
+
+
+// .cb-accordion button::-moz-focus-inner {
+//   border: 0;
+// }
+
+.cb-accordion__trigger:focus .cb-accordion__title {
+  border-color: red;
+
+}
+
+.cb-accordion__icon {
+  border: solid currentcolor;
+  border-width: 0 1.5px 1.5px 0;
+  height: rem(12);
+  pointer-events: none;
+  position: absolute;
+  right: 2em;
+  top: 50%;
+  transform: translateY(-60%) rotate(45deg);
+  width: rem(12);
+  color: $color-secundary;
+}
+
+.cb-accordion__trigger:focus .cb-accordion__icon,
+.cb-accordion__trigger:hover .cb-accordion__icon {
+  border-color: $color-secundary;
+}
+
+.cb-accordion__trigger[aria-expanded="true"] {
+  border-bottom: 0;
+}
+
+.cb-accordion__trigger[aria-expanded="true"] .cb-accordion__icon {
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+.cb-accordion__panel {
+  margin: 0;
+  padding: 0 rem(36) rem(24);
+  border-bottom: 1px solid $color-border;
+  background-color: $color-bg;
+}
+
+.cb-accordion__panel[hidden] {
+  display: none;
+}
+
+.cb-accordion__img {
+  width: 40%;
+  height: auto;
+  border-top: 1px solid $color-border;
+}
+
+.cb-accordion__list {
+  padding-left: rem(24);
+}
+
+.cb-accordion__item {
+  margin-bottom: rem(16);
+}
+
+.cb-accordion__text {
+  line-height: rem(25);
+}
+
+.cb-accordion__text strong {
+  font-family: "Satoshi Bold";
 }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html dir="ltr" lang="es" class="no-js">
   <head>
     <meta charset="UTF-8" />
@@ -338,7 +338,7 @@
       type="text/xml+oembed"
       href="https://www.clinicadelpiebaez.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.clinicadelpiebaez.com%2F&amp;format=xml"
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="icon"
       href="https://www.clinicadelpiebaez.com/wp-content/uploads/2017/10/cropped-icon_baez-32x32.jpg"
@@ -365,7 +365,7 @@
       onload="this.onload=null;this.rel='stylesheet';"
     />
 
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="../css/main.css" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -377,12 +377,16 @@
       <div class="cb-header__col1">
         <img
           class="cb-header__logo"
-          src="assets/img/logotipo-clinica-baez.png"
+          src="../assets/img/logotipo-clinica-baez.svg"
           alt=""
-          srcset=""
+        />
+        <img
+          class="cb-header__logo-basic"
+          src="../assets/img/logotipo-clinica-baez-basic.svg"
+          alt=""
         />
       </div>
-      <nav class="cb-header__col2">
+      <nav class="cb-header__nav cb-header__col2">
         <ul class="cb-header__list">
           <li class="cb-header__item">
             <a class="cb-header__nav-link" href="/">Inicio</a>
@@ -409,6 +413,45 @@
               ></div>
             </div>
           </li>
+          <li class="cb-header__item cb-header--item-mobile">
+            <div class="cb-main__col">
+              <h3 class="cb-main__col-title">LLámanos al</h3>
+              <a class="cb-main__col-link" href="">
+                <img
+                  class="cb-main__col-icon"
+                  src="../assets/img/icon-40-phone.svg"
+                  alt=""
+                />
+                <span>856 177 711</span>
+              </a>
+            </div>
+          </li>
+          <li class="cb-header__item cb-header--item-mobile">
+            <div class="cb-main__col">
+              <h3 class="cb-main__col-title">Envíanos un whatsapp</h3>
+              <a class="cb-main__col-link" href="">
+                <img
+                  class="cb-main__col-icon"
+                  src="../assets/img/icon-40-message.svg"
+                  alt=""
+                />
+                <span>674 653 000</span>
+              </a>
+            </div>
+          </li>
+          <li class="cb-header__item cb-header--item-mobile">
+            <div class="cb-main__col">
+              <h3 class="cb-main__col-title">Visítanos</h3>
+              <a class="cb-main__col-text" href="">
+                <img
+                  class="cb-main__col-icon"
+                  src="../assets/img/icon-40-location.svg"
+                  alt=""
+                />
+                <span>Plaza de Jaen, 1 <span>(Av. Pery Junquera)</span></span>
+              </a>
+            </div>
+          </li>
         </ul>
       </nav>
       <div class="cb-heder__col3">
@@ -421,35 +464,183 @@
         >
           pide cita
         </a>
+
+        <a
+          class="cb-button__menu"
+          tabindex="0"
+          role="button"
+          id="toggle"
+          aria-pressed="false"
+        >
+          <span class="cb-button--open-text">abrir menu</span>
+          <span class="cb-button--close-text">cerrar menu</span>
+        </a>
       </div>
     </header>
     <main class="cb-main">
-      <div class="cb-carousel">
-        <div>
-          <img src="assets/img/carousel-image-1.png" alt="" srcset="" />
+      <section class="cb-wrapper cb-wrapper--grey">
+        <h1 class="cb-main__h1">
+          Soportes plantares / plantillas personalizadas
+        </h1>
+        <h2 class="cb-main__h2">Qué incluye el tratamiento</h2>
+
+        <p class="cb-main__p">
+          Nuestros especialistas en San Fernando trabajan con el paciente para
+          analizar la biomecánica del pie, proporcionando soluciones
+          personalizadas.
+        </p>
+      </section>
+
+      <section class="cb-wrapper">
+        <div class="cb-accordion__group">
+          <img
+            class="cb-accordion__img"
+            src="../assets/img/podiatrist-showing-foot-insole.jpg"
+            alt=""
+          />
+          <div id="accordionGroup" class="cb-accordion">
+            <h3>
+              <button
+                type="button"
+                aria-expanded="true"
+                class="cb-accordion__trigger"
+                aria-controls="sect1"
+                id="accordion1id"
+              >
+                <span class="cb-accordion__title">
+                  Personal Information
+                  <span class="cb-accordion__icon"></span>
+                </span>
+              </button>
+            </h3>
+            <div
+              id="sect1"
+              role="region"
+              aria-labelledby="accordion1id"
+              class="cb-accordion__panel"
+            >
+              <ul class="cb-accordion__list">
+                <li class="cb-accordion__item">
+                  <p class="cb-accordion__text">
+                    <strong>Análisis de la pisada:</strong> Un podólogo
+                    deportivo realiza un detallado análisis de la pisada del
+                    paciente utilizando herramientas como plataformas de presión
+                    y cámaras de video.
+                  </p>
+                </li>
+                <li class="cb-accordion__item">
+                  <p class="cb-accordion__text">
+                    <strong>Estudio de la marcha y postura:</strong> Además de
+                    la pisada, se evalúa la marcha y la postura del paciente al
+                    realizar actividades específicas relacionadas con su
+                    deporte.
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <h3>
+              <button
+                type="button"
+                aria-expanded="false"
+                class="cb-accordion__trigger"
+                aria-controls="sect2"
+                id="accordion2id"
+              >
+                <span class="cb-accordion__title">
+                  Billing Address
+                  <span class="cb-accordion__icon"></span>
+                </span>
+              </button>
+            </h3>
+            <div
+              id="sect2"
+              role="region"
+              aria-labelledby="accordion2id"
+              class="cb-accordion__panel"
+              hidden=""
+            >
+              <div>popo 2</div>
+            </div>
+            <h3>
+              <button
+                type="button"
+                aria-expanded="false"
+                class="cb-accordion__trigger"
+                aria-controls="sect3"
+                id="accordion3id"
+              >
+                <span class="cb-accordion__title">
+                  Shipping Address
+                  <span class="cb-accordion__icon"></span>
+                </span>
+              </button>
+            </h3>
+            <div
+              id="sect3"
+              role="region"
+              aria-labelledby="accordion3id"
+              class="cb-accordion__panel"
+              hidden=""
+            >
+              <div>popo 3</div>
+            </div>
+          </div>
         </div>
-        <div>
-          <img src="assets/img/carousel-image-2.png" alt="" srcset="" />
+      </section>
+
+      <section class="cb-wrapper">
+        <h2 class="cb-main__h1">Contacto</h2>
+        <h3 class="cb-main__h2 cb-main--h2-margin">
+          Si tienes dudas, puedes contactarnos por teléfono, whatsapp o en
+          nuestra clínica.
+        </h3>
+
+        <div class="cb-main__cols cb-main__cols-3">
+          <div class="cb-main__col">
+            <h3 class="cb-main__col-title">LLámanos al</h3>
+            <a class="cb-main__col-link" href="">
+              <img class="cb-main__col-icon" src="../assets/img/icon-40-phone.svg" alt="">
+              <span>856 177 711</span>
+            </a>
+          </div>
+          <div class="cb-main__col">
+            <h3 class="cb-main__col-title">Envíanos un whatsapp</h3>
+            <a class="cb-main__col-link" href="">
+              <img class="cb-main__col-icon" src="../assets/img/icon-40-message.svg" alt="">
+              <span>674 653 000</span>
+            </a>
+          </div>
+          <div class="cb-main__col">
+            <h3 class="cb-main__col-title">Visítanos</h3>
+            <a class="cb-main__col-text" href="">
+              <img class="cb-main__col-icon" src="../assets/img/icon-40-location.svg" alt="">
+              <span>Plaza de Jaen, 1 <span>(Av. Pery Junquera)</span></span>
+            </a>
+          </div>
         </div>
-        <div>
-          <img src="assets/img/carousel-image-1.png" alt="" srcset="" />
-        </div>
-        <div>
-          <img src="assets/img/carousel-image-2.png" alt="" srcset="" />
-        </div>
-        <div>
-          <img src="assets/img/carousel-image-1.png" alt="" srcset="" />
-        </div>
-        <div>
-          <img src="assets/img/carousel-image-2.png" alt="" srcset="" />
-        </div>
-      </div>
+      </section>
     </main>
 
-    <script
-      type="text/javascript"
-      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-    ></script>
-    <script type="module" src="js/main.js"></script>
+    <footer class="cb-footer">
+      <div class="cb-wrapper">
+        <div class="cb-main__cols cb-main__cols-2">
+          <div class="cb-main__col">
+            <h3 class="cb-main__col-title">logotipo-clinica-baez</h3>
+            <a class="cb-main__col-link" href="">
+              <img class="cb-main__col-icon" src="../assets/img/icon-40-instagram.svg" alt="">
+              <span>clinicadelpiebaez</span>
+            </a>
+          </div>
+          <div class="cb-main__col">
+            <img class="cb-main__col-icon" src="../assets/img/logotipo-clinica-baez-2.svg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="cb-footer__copy">
+        <p>Todos los derechos reservados. 2024</p>
+      </div>
+    </footer>
+
+    <script type="module" src="../js/main.js"></script>
   </body>
 </html>

@@ -1,12 +1,10 @@
-// import { header } from './data.js';
+'use strict';
 
 function combobox() {
   /*
    *   This content is licensed according to the W3C Software License at
    *   https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
    */
-
-  "use strict";
 
   // Save a list of named combobox actions, for future readability
   const SelectActions = {
@@ -414,19 +412,25 @@ function combobox() {
 
   // init select
   window.addEventListener("load", function () {
+    const urlHref = window.location.href;
+    let url = "";
+    if (!urlHref.includes("tratamientos")) {
+      url = "tratamientos/";
+    }
+
     const options = [
       {
         title: "Cirugía y tratamiento de juanetes",
-        url: "tratamientos/cirugia-podologica.html"
+        url: `${url}cirugia-podologica.html`,
       },
       {
         title: "Tratamiento de papilomas",
-        url: "page-2.html"
+        url: `${url}page-2.html`,
       },
       {
         title: "Podología deportiva",
-        url: "page-2.html"
-      }
+        url: `${url}page-3.html`,
+      },
     ];
     const selectEls = document.querySelectorAll(".js-select");
 
@@ -437,38 +441,95 @@ function combobox() {
 }
 
 function carousel() {
-  $('.cb-carousel').slick({
-    infinite: false,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    variableWidth: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          centerMode: true,
-          arrows: false,
-          infinite: true,
-          centerPadding: '140px',
-          slidesToShow: 2
-        }
-      },
-    ]
-  });
+  const carousel = document.querySelector('.cb-carousel');
+
+  if(carousel) {
+    $(".cb-carousel").slick({
+      infinite: false,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      variableWidth: true,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            centerMode: true,
+            arrows: false,
+            infinite: true,
+            centerPadding: "140px",
+            slidesToShow: 2,
+          },
+        },
+      ],
+    });
+  }
+
 }
 
 function menuMobile(params) {
-  const btnMenu = document.querySelector('.cb-button__menu');
-  const menu = document.querySelector('.cb-header__nav');
+  const btnMenu = document.querySelector(".cb-button__menu");
+  const menu = document.querySelector(".cb-header__nav");
 
-  btnMenu.addEventListener('click', (e) => {
+  btnMenu.addEventListener("click", (e) => {
     const btn = e.target;
-    menu.classList.toggle('open');
-    btn.classList.toggle('open');
-  })
+    menu.classList.toggle("open");
+    btn.classList.toggle("open");
+  });
 }
+
+class Accordion {
+  constructor(domNode) {
+    this.rootEl = domNode;
+    this.buttonEl = this.rootEl.querySelector('button[aria-expanded]');
+
+    const controlsId = this.buttonEl.getAttribute('aria-controls');
+    this.contentEl = document.getElementById(controlsId);
+
+    this.open = this.buttonEl.getAttribute('aria-expanded') === 'true';
+
+    // add event listeners
+    this.buttonEl.addEventListener('click', this.onButtonClick.bind(this));
+  }
+
+  onButtonClick() {
+    this.toggle(!this.open);
+  }
+
+  toggle(open) {
+    // don't do anything if the open state doesn't change
+    if (open === this.open) {
+      return;
+    }
+
+    // update the internal state
+    this.open = open;
+
+    // handle DOM updates
+    this.buttonEl.setAttribute('aria-expanded', `${open}`);
+    if (open) {
+      this.contentEl.removeAttribute('hidden');
+    } else {
+      this.contentEl.setAttribute('hidden', '');
+    }
+  }
+
+  // Add public open and close methods for convenience
+  open() {
+    this.toggle(true);
+  }
+
+  close() {
+    this.toggle(false);
+  }
+}
+
+// init accordions
+const accordions = document.querySelectorAll('.cb-accordion h3');
+accordions.forEach((accordionEl) => {
+  new Accordion(accordionEl);
+});
+
 
 menuMobile();
 combobox();
 carousel();
-
