@@ -449,8 +449,8 @@ function carousel() {
           centerMode: true,
           arrows: false,
           infinite: true,
-          centerPadding: '40px',
-          slidesToShow: 3
+          centerPadding: '140px',
+          slidesToShow: 2
         }
       },
     ]

@@ -712,7 +712,11 @@ body {
 
 /* Carousel */
 .cb-carousel {
-  margin-bottom: rem(136);
+  margin-bottom: rem(78);
+
+  @media screen and (min-width: $bp-tablet) {
+    margin-bottom: rem(136);
+  }
 
   @media screen and (min-width: $bp-desktop) {
     height: rem(570);
@@ -720,12 +724,16 @@ body {
 
   &::before {
     content: '';
-    height: rem(627);
+    height: rem(380);
     width: rem(6000);
     background-color: $color-primary;
     position: absolute;
     right: calc(50% - 600px);
     top: rem(80);
+
+    @media screen and (min-width: $bp-tablet) {
+      height: rem(627);
+    }
   }
 
   &::after {
@@ -756,7 +764,11 @@ body {
     padding: 0 rem(18);
 
     img {
-      width: rem(380);
+      width: rem(254);
+
+      @media screen and (min-width: $bp-tablet) {
+        width: rem(380);
+      }
     }
   }
 
