@@ -12,6 +12,10 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow: hidden;
+}
+
 body {
   background-color: $color-bg;
   font-family: "Satoshi Regular";
@@ -190,6 +194,8 @@ body {
     background-color: $color-primary;
     display: none;
     border-top: 1px solid $color-border;
+    overflow-y: scroll;
+    height: calc(100vh - 62px);
 
     @media screen and (min-width: $bp-tablet) {
       position: static;
@@ -197,6 +203,8 @@ body {
       background-color: transparent;
       display: block;
       border-top: 0;
+      overflow-y:auto;
+      height: auto;
     }
 
     &.open {
