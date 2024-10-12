@@ -15,6 +15,7 @@
 }
 
 html {
+  overflow-x: hidden;
   &.block {
     overflow: hidden;
 
@@ -335,6 +336,11 @@ body {
     @media screen and (min-width: $bp-tablet) {
       display: inline-block;
     }
+
+    &:focus-visible {
+      outline: 1px solid $color-focus;
+      outline-offset: -1px;
+    }
   }
 
   .cb-button__menu {
@@ -347,10 +353,23 @@ body {
 }
 
 .cb-main {
-  margin-top: rem(64);
+  margin-top: rem(63);
+  position: relative;
 
   @media screen and (min-width: $bp-tablet) {
     margin-top: rem(0);
+  }
+
+  &:after {
+    position: absolute;
+    content: "";
+    border-top: 0;
+    width: 100%;
+    top: -1px;
+
+    @media screen and (min-width: $bp-tablet) {
+      border-top: 1px solid $color-border;
+    }
   }
 
   &__h1 {
@@ -522,12 +541,14 @@ body {
         border-right: 0;
         border-bottom: 0;
       }
-    }
 
-    &:last-child {
       .cb-main__col-text {
         margin-top: rem(4);
       }
+    }
+
+    &:first-child {
+      border-top: 0;
     }
   }
 
@@ -559,6 +580,11 @@ body {
       padding: 0 rem(64) rem(60);
     }
 
+    &:focus-visible {
+      outline: 1px solid $color-focus;
+      outline-offset: -1px;
+    }
+
     .cb-main__col-icon {
       margin-right: rem(8);
     }
@@ -575,6 +601,11 @@ body {
 
     @media screen and (min-width: $bp-tablet) {
       padding: 0 rem(64) rem(60);
+    }
+
+    &:focus-visible {
+      outline: 1px solid $color-focus;
+      outline-offset: -1px;
     }
 
     span span {
@@ -685,16 +716,20 @@ body {
     display: none;
     overflow-y: auto;
     left: 0;
-    
     top: 100%;
     width: 100%;
     z-index: 100;
     position: static;
+    outline: 1px solid $color-border;
+    margin-top: 1px;
 
     @media screen and (min-width: $bp-tablet) {
+      background-color: $color-bg;
       width: rem(400);
       position: absolute;
-      max-height: 300px;
+      max-height: rem(500);
+      top: rem(80);
+      margin-top: 0;
     }
   }
 
@@ -717,10 +752,6 @@ body {
     &:focus-visible {
       outline: 1px solid $color-focus;
       outline-offset: -1px;
-    }
-
-    &.option__current {
-      background-color: $color-tertiary;
     }
   }
 }
@@ -1276,7 +1307,7 @@ body {
 
   @media screen and (min-width: $bp-tablet) {
     font-size: rem(32);
-    padding: rem(36);
+    padding: rem(36) rem(96) rem(36) rem(36);
   }
 }
 
@@ -1294,13 +1325,12 @@ body {
   border-bottom: 1px solid $color-border;
 }
 
-// .cb-accordion__trigger:focus,
-// .cb-accordion__trigger:hover {
-//   background: red;
-// }
 
-.cb-accordion__trigger:focus {
-  outline: 4px solid transparent;
+.cb-accordion__trigger {
+  &:focus-visible {
+    outline: 1px solid $color-focus;
+    outline-offset: -1px;
+  }
 }
 
 
@@ -1350,7 +1380,8 @@ body {
   display: none;
 }
 
-.cb-accordion__img {
+.cb-accordion__img,
+.cb-accordion__video {
   width: 100%;
   height: auto;
   max-width: rem(480);
@@ -1360,6 +1391,20 @@ body {
     width: rem(480);
     padding: 0;
     border-top: 1px solid $color-border;
+  }
+}
+
+.cb-accordion__video {
+  max-height: rem(721);
+  overflow: hidden;
+}
+
+.cb-accordion__video-video {
+  width: 100%;
+
+  &:focus-visible {
+    outline: 1px solid $color-focus;
+    outline-offset: -1px;
   }
 }
 

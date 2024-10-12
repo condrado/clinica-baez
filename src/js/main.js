@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 function combobox() {
   /*
@@ -196,7 +196,7 @@ function combobox() {
 
   Select.prototype.init = function () {
     // select first option by default
-    this.comboEl.innerHTML = this.options[0] ? this.options[0] : '';
+    this.comboEl.innerHTML = this.options[0] ? this.options[0] : "";
 
     // add event listeners
     this.labelEl.addEventListener("click", this.onLabelClick.bind(this));
@@ -422,16 +422,24 @@ function combobox() {
 
     const options = [
       {
+        title: "Plantillas personalizadas",
+        url: `${url}soportes-plantares.html`,
+      },
+      {
+        title: "Estudio de la pisada",
+        url: `${url}estudios-biomecanicos.html`,
+      },
+      {
         title: "Cirugía y tratamiento de juanetes",
         url: `${url}cirugia-podologica.html`,
       },
       {
-        title: "Tratamiento de papilomas",
-        url: `${url}page-2.html`,
+        title: "Ecografía del pie y tobillo",
+        url: `${url}ecografia-pie-tobillo.html`,
       },
       {
-        title: "Podología deportiva",
-        url: `${url}page-3.html`,
+        title: "Terapia láser",
+        url: `${url}laser-fox-iii.html`,
       },
     ];
     const options2 = [];
@@ -448,9 +456,9 @@ function combobox() {
 }
 
 function carousel() {
-  const carousel = document.querySelector('.cb-carousel');
+  const carousel = document.querySelector(".cb-carousel");
 
-  if(carousel) {
+  if (carousel) {
     $(".cb-carousel").slick({
       infinite: false,
       slidesToShow: 2,
@@ -471,7 +479,6 @@ function carousel() {
       ],
     });
   }
-
 }
 
 function menuMobile(params) {
@@ -490,15 +497,15 @@ function menuMobile(params) {
 class Accordion {
   constructor(domNode) {
     this.rootEl = domNode;
-    this.buttonEl = this.rootEl.querySelector('button[aria-expanded]');
+    this.buttonEl = this.rootEl.querySelector("button[aria-expanded]");
 
-    const controlsId = this.buttonEl.getAttribute('aria-controls');
+    const controlsId = this.buttonEl.getAttribute("aria-controls");
     this.contentEl = document.getElementById(controlsId);
 
-    this.open = this.buttonEl.getAttribute('aria-expanded') === 'true';
+    this.open = this.buttonEl.getAttribute("aria-expanded") === "true";
 
     // add event listeners
-    this.buttonEl.addEventListener('click', this.onButtonClick.bind(this));
+    this.buttonEl.addEventListener("click", this.onButtonClick.bind(this));
   }
 
   onButtonClick() {
@@ -515,11 +522,11 @@ class Accordion {
     this.open = open;
 
     // handle DOM updates
-    this.buttonEl.setAttribute('aria-expanded', `${open}`);
+    this.buttonEl.setAttribute("aria-expanded", `${open}`);
     if (open) {
-      this.contentEl.removeAttribute('hidden');
+      this.contentEl.removeAttribute("hidden");
     } else {
-      this.contentEl.setAttribute('hidden', '');
+      this.contentEl.setAttribute("hidden", "");
     }
   }
 
@@ -534,12 +541,41 @@ class Accordion {
 }
 
 // init accordions
-const accordions = document.querySelectorAll('.cb-accordion h3');
+const accordions = document.querySelectorAll(".cb-accordion h3");
 accordions.forEach((accordionEl) => {
   new Accordion(accordionEl);
 });
 
+function video() {
+  // Seleccionamos el video
+  const video = document.getElementById("video-1");
+
+  if (video) {
+    // Añadimos un evento de clic al video
+    video.addEventListener("click", function () {
+      togglePlayPause(video);
+    });
+
+    // Añadimos un evento para detectar cuando se presiona la barra espaciadora
+    document.addEventListener("keydown", function (event) {
+      if (event.code === "Space") {
+        event.preventDefault(); // Evita que la página se desplace hacia abajo al presionar la barra espaciadora
+        togglePlayPause(video);
+      }
+    });
+  }
+}
+
+// Función para alternar entre reproducir y pausar
+function togglePlayPause(video) {
+  if (video.paused) {
+    video.play(); // Si está pausado, lo reproducimos
+  } else {
+    video.pause(); // Si está reproduciéndose, lo pausamos
+  }
+}
 
 menuMobile();
 combobox();
 carousel();
+video();
