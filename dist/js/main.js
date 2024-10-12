@@ -511,12 +511,12 @@ function video() {
 
     // Alternar entre reproducir y pausar con clic o barra espaciadora
     video.addEventListener("click", function () {
-      togglePlayPause();
+      togglePlayPause(video);
     });
     document.addEventListener("keydown", function (event) {
       if (event.code === "Space" && document.activeElement === video) {
         event.preventDefault();
-        togglePlayPause();
+        togglePlayPause(video);
       }
     });
   }
