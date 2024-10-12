@@ -551,16 +551,18 @@ function video() {
   const video = document.getElementById("video-1");
 
   if (video) {
-    // Añadimos un evento de clic al video
+    // Forzar reproducción si el video está en silencio (aplicable en algunos navegadores móviles)
+    video.muted = true;
+
+    // Alternar entre reproducir y pausar con clic o barra espaciadora
     video.addEventListener("click", function () {
-      togglePlayPause(video);
+      togglePlayPause();
     });
 
-    // Añadimos un evento para detectar cuando se presiona la barra espaciadora
     document.addEventListener("keydown", function (event) {
-      if (event.code === "Space") {
-        event.preventDefault(); // Evita que la página se desplace hacia abajo al presionar la barra espaciadora
-        togglePlayPause(video);
+      if (event.code === "Space" && document.activeElement === video) {
+        event.preventDefault();
+        togglePlayPause();
       }
     });
   }

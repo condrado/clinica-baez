@@ -544,11 +544,16 @@ body {
 
       .cb-main__col-text {
         margin-top: rem(4);
+        text-transform: none;
       }
     }
 
     &:first-child {
-      border-top: 0;
+      border-top: 1px solid $color-border;
+
+      @media screen and (min-width: $bp-desktop) {
+        border-top: 0;
+      }
     }
   }
 
