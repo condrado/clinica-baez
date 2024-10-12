@@ -10,6 +10,8 @@
 
 * {
   box-sizing: border-box;
+  letter-spacing: 0px;
+  word-spacing: 0;
 }
 
 html {
@@ -17,6 +19,7 @@ html {
     overflow: hidden;
   }
 }
+
 
 body {
   background-color: $color-bg;
@@ -1007,15 +1010,16 @@ body {
   }
 
   &__title {
-    font-size: rem(24);
+    font-size: rem(18);
     margin: rem(78) rem(24) rem(16);
     font-family: "Satoshi Regular";
     font-weight: 400;
-    color: $color-font-title;
+    color: $color-font-base;
+    text-transform: uppercase;
 
     @media screen and (min-width: $bp-tablet) {
       margin: rem(78) rem(40) rem(16);
-      font-size: rem(48);
+      
     }
 
     @media screen and (min-width: $bp-desktop) {
@@ -1049,16 +1053,30 @@ body {
       }
 
       @media screen and (min-width: $bp-desktop) {
-        margin: 0 rem(103);
+        margin: 0 rem(62) 0 rem(103);
+      }
+
+      &.cb-card__list-basic-link {
+        padding-right: rem(48);
       }
     }
+    
   }
 
   &__img {
     width: 100%;
+    background-image: url('../assets/img/podiatrist-scanning-foot-3.jpg');
+    background-position: center center;
+    background-size: cover;
+    height: rem(390);
+
+    @media screen and (min-width: $bp-tablet) {
+      height: rem(744);
+    }
 
     @media screen and (min-width: $bp-desktop) {
       width: 50%;
+      height: auto;
     }
   }
   
@@ -1066,6 +1084,10 @@ body {
     padding: 0;
     list-style: none;
     font-family: "Satoshi Regular";
+
+    @media screen and (min-width: $bp-desktop) {
+      margin-bottom: rem(78);
+    }
   }
 
   &__list-basic-link {
@@ -1082,6 +1104,10 @@ body {
       color: $color-font-base;
       display: block;
       padding: rem(8) 0;
+
+      &:hover {
+        color: $color-font-title;
+      }
   
       @media screen and (min-width: $bp-tablet) {
         font-size: rem(32);
@@ -1096,10 +1122,21 @@ body {
     }
 
     &::after {
-      content: url('../assets/img/icon-24-arrow_outward.svg');
+      content: url('../assets/img/icon-24-arrow_right.svg');
       position: absolute;
       right: 0;
-      top: calc(50% - 12px)
+      top: calc(50% - 12px);
+      transition: transform .5s;
+      transform: rotate(-45deg);
+      height: rem(24);
+      width: rem(24);
+    }
+
+    &:hover {
+      &::after {
+        transition: transform .3s;
+        transform: rotate(0deg);
+      }
     }
   }
 }

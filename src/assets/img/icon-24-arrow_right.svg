@@ -1,0 +1,10 @@
+<svg width="23.999999999999996" height="23.999999999999996" xmlns="http://www.w3.org/2000/svg" fill="none">
+ <mask id="mask0_1015_1059" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+  <rect width="24" height="24" fill="#D9D9D9" id="svg_1"/>
+ </mask>
+
+ <g>
+  <title>Layer 1</title>
+  <path transform="rotate(45 11.7566 12)" d="m6.55085,17.89426l-0.6885,-0.6885l10.0807,-10.1l-9.2922,0l0,-1l11,0l0,11l-1,0l0,-9.29225l-10.1,10.08075z" fill="#666666" id="svg_3"/>
+ </g>
+</svg>
