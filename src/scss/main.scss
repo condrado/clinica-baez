@@ -1227,6 +1227,18 @@ body {
     width: 100%;
     padding: rem(24) 0;
   }
+
+  .cb-main__col {
+    margin: 0;
+    width: 100%;
+
+    border-left: 0;
+    border-right: 0;
+
+    &:first-child {
+      border-top: 0;
+    }
+  }
 }
 
 
