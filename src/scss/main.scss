@@ -78,15 +78,19 @@ body {
   position: fixed;
   border-top: 1px solid $color-border;
   border-bottom: 1px solid $color-border;
-  border-left: 1px solid $color-border;
-  border-right: 1px solid $color-border;
+
   padding: 0 rem(24);
   z-index: 6;
   background-color: $color-bg;
+  top: -1px;
   
   @media screen and (min-width: $bp-tablet) {
     height: rem(80);
     padding: 0 rem(80);
+    position: static;
+    border-top: 0;
+    border-left: 1px solid $color-border;
+    border-right: 1px solid $color-border;
   }
 
   @media screen and (min-width: $bp-desktop) {
@@ -113,23 +117,23 @@ body {
   }
 
   &__logo {
-    width: rem(130);
-    display: none;
-
-    @media screen and (min-width: $bp-tablet) {
-      display: block;
-    }
-  }
-
-  &__logo-basic {
-    width: rem(24);
+    width: rem(97);
     display: block;
-    position: relative;
 
     @media screen and (min-width: $bp-tablet) {
-      display: none;
+      width: rem(130);
     }
   }
+
+  // &__logo-basic {
+  //   width: rem(24);
+  //   display: block;
+  //   position: relative;
+
+  //   @media screen and (min-width: $bp-tablet) {
+  //     display: none;
+  //   }
+  // }
 
   &__list {
     display: flex;
@@ -141,11 +145,13 @@ body {
     padding: 0;
     width: 100%;
     border-bottom: 1px solid $color-border;
+    border-top: 1px solid $color-border;
 
     @media screen and (min-width: $bp-tablet) {
       flex-direction: row;
       width: auto;
       border-bottom: 0;
+      border-top: 0;
     }
   }
 
@@ -158,10 +164,15 @@ body {
 
     @media screen and (min-width: $bp-tablet) {
       height: rem(80);
+      border-top: 0;
     }
 
-    &:first-child {
-      border-top: 0;
+    &:last-child {
+      border-bottom: 1px solid $color-border;
+
+      @media screen and (min-width: $bp-tablet) {
+        border-bottom: 0;
+      }
     }
   }
 
@@ -191,12 +202,12 @@ body {
   &__nav {
     position: absolute;
     right: 0;
-    top: rem(62);
+    top: rem(60);
     width: 100%;
     background-color: $color-primary;
     display: none;
     border-top: 1px solid $color-border;
-    overflow-y: scroll;
+    overflow-y: auto;
     height: calc(100vh - 62px);
     height: calc(100dvh - 62px);
 
@@ -206,23 +217,23 @@ body {
       background-color: transparent;
       display: block;
       border-top: 0;
-      overflow-y:auto;
+      overflow-y:inherit;
       height: auto;
     }
 
     &.open {
       display: block;
+      border-top: 1px solid $color-border;
 
       &::before {
         content: '';
-        background-color: $color-bg;
+        background-color: $color-primary;
         position: fixed;
         width: 100%;
         height: 100%;
-        opacity: .7;
         top: 0;
         left: 0;
-        z-index: -1;
+        z-index: 0;
 
         @media screen and (min-width: $bp-tablet) {
           display: none;
@@ -233,6 +244,7 @@ body {
 
   &__col1 {
     position: relative;
+    z-index: 0px;
 
     &::after {
       content: "";
@@ -240,10 +252,10 @@ body {
       height: rem(64);
       right: rem(-24);
       top: rem(-21);
-      border-right: 1px solid $color-border;
+      border-right: 0px solid $color-border;
       
       @media screen and (min-width: $bp-tablet) {
-        border-right: 0;
+        border-right: 1px;
       }
     }
   }
@@ -297,7 +309,7 @@ body {
   margin-top: rem(64);
 
   @media screen and (min-width: $bp-tablet) {
-    margin-top: rem(80);
+    margin-top: rem(0);
   }
 
   &__h1 {
@@ -677,7 +689,6 @@ body {
   display: inline-block;
   position: relative;
   padding: 0.4em 0.7em;
-  border-radius: 5px;
   color: #fff;
   background-color: $color-secundary;
 
@@ -699,8 +710,6 @@ body {
     bottom: calc(-1px - 3px - 3px);
     left: calc(-1px - 3px - 3px);
   
-    /* button border radius + outline width + offset */
-    border-radius: calc(5px + 3px + 3px);
     content: "";
   }
 
