@@ -192,7 +192,7 @@ function combobox() {
   };
   Select.prototype.init = function () {
     // select first option by default
-    this.comboEl.innerHTML = this.options[0];
+    this.comboEl.innerHTML = this.options[0] ? this.options[0] : '';
 
     // add event listeners
     this.labelEl.addEventListener("click", this.onLabelClick.bind(this));
@@ -358,6 +358,8 @@ function combobox() {
       });
       options[index].setAttribute("aria-selected", "true");
       this.inputlEl.innerText = "";
+    } else {
+      this.inputlEl.innerText = "";
     }
   };
   Select.prototype.updateMenuState = function (open) {
@@ -404,9 +406,14 @@ function combobox() {
       title: "Podología deportiva",
       url: "".concat(url, "page-3.html")
     }];
+    var options2 = [];
     var selectEls = document.querySelectorAll(".js-select");
+    var selectEls2 = document.querySelectorAll(".js-select-2");
     selectEls.forEach(el => {
       new Select(el, options);
+    });
+    selectEls2.forEach(el => {
+      new Select(el, options2);
     });
   });
 }

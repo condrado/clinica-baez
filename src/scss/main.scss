@@ -17,6 +17,10 @@
 html {
   &.block {
     overflow: hidden;
+
+    @media screen and (min-width: $bp-tablet) {
+      overflow-y:auto
+    }
   }
 }
 
@@ -147,7 +151,9 @@ body {
     flex-direction: column;
     padding: 0;
     width: 100%;
-    border-bottom: 1px solid $color-border;
+    background-color: $color-primary;
+    position: relative;
+    z-index: 1;
     border-top: 1px solid $color-border;
 
     @media screen and (min-width: $bp-tablet) {
@@ -155,6 +161,7 @@ body {
       width: auto;
       border-bottom: 0;
       border-top: 0;
+      background-color: transparent;
     }
   }
 
@@ -163,7 +170,7 @@ body {
     display: flex;
     align-items: center;
     position: relative;
-    border-top: 1px solid $color-border;
+    border-bottom: 1px solid $color-border;
 
     @media screen and (min-width: $bp-tablet) {
       height: rem(80);
@@ -171,7 +178,7 @@ body {
     }
 
     &:last-child {
-      border-bottom: 1px solid $color-border;
+      // border-bottom: 1px solid $color-border;
 
       @media screen and (min-width: $bp-tablet) {
         border-bottom: 0;
@@ -209,7 +216,7 @@ body {
     width: 100%;
     background-color: $color-primary;
     display: none;
-    border-top: 1px solid $color-border;
+    // border-top: 1px solid $color-border;
     overflow-y: auto;
     height: calc(100vh - 62px);
     height: calc(100dvh - 62px);
@@ -226,7 +233,7 @@ body {
 
     &.open {
       display: block;
-      border-top: 1px solid $color-border;
+      // border-top: 1px solid $color-border;
 
       &::before {
         content: '';
@@ -242,6 +249,37 @@ body {
           display: none;
         }
       }
+
+
+    }
+    
+  }
+
+  &__nav-logo {
+    position: absolute;
+    bottom: rem(40);
+    width: rem(342);
+    height: rem(116);
+    left: calc(50% - 171px);
+    z-index: 0;
+    overflow: hidden;
+
+    @media screen and (min-width: $bp-tablet) {
+      display: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -37%;
+      width: 137%;
+      height: rem(340);
+      z-index: 1;
+      background-image: url(../assets/img/logotipo-clinica-baez-2.svg);
+      background-size: 100%;
+      background-position: center bottom;
+      background-repeat: no-repeat;
     }
   }
 
@@ -645,7 +683,6 @@ body {
     background-color: $color-primary;
     border-top: 0;
     display: none;
-    max-height: 300px;
     overflow-y: auto;
     left: 0;
     
@@ -657,6 +694,7 @@ body {
     @media screen and (min-width: $bp-tablet) {
       width: rem(400);
       position: absolute;
+      max-height: 300px;
     }
   }
 
