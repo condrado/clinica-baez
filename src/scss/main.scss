@@ -647,7 +647,7 @@ body {
 
       @media screen and (min-width: $bp-tablet) {
         transform: translate(0, -65%) rotate(45deg);
-        top: rem(40);
+        top: rem(38);
       }
     }
   }
@@ -671,7 +671,7 @@ body {
     width: rem(8);
 
     @media screen and (min-width: $bp-tablet) {
-      top: 50%;
+      top: rem(38);
       right: rem(5);
     }
   }
@@ -725,21 +725,21 @@ body {
     width: 100%;
     z-index: 100;
     position: static;
-    outline: 1px solid $color-border;
     margin-top: 1px;
 
     @media screen and (min-width: $bp-tablet) {
       background-color: $color-bg;
-      width: rem(400);
+      width: rem(360);
       position: absolute;
       max-height: rem(500);
       top: rem(80);
       margin-top: 0;
+      outline: 1px solid $color-border;
     }
   }
-
+ 
   &__option {
-    padding: rem(20) rem(24);
+    padding: rem(11) rem(48) rem(11) rem(24);
     text-transform: none;
     cursor: pointer;
     display: block;
@@ -749,14 +749,45 @@ body {
     font-family: "Satoshi Light";
     letter-spacing: 2px;
     word-spacing: 1px;
+    position: relative;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
 
     &:hover {
-      background-color: $color-tertiary;
+      @media screen and (min-width: $bp-tablet) {
+        background-color: $color-primary;
+        border-top: 1px solid $color-border;
+        border-bottom: 1px solid $color-border;
+
+        &::after {
+          display: block;
+        }
+
+        &:first-child {
+          border-top: 1px solid transparent;
+        }
+
+        &:last-child {
+          border-bottom: 1px solid transparent;
+        }
+      }
     }
 
     &:focus-visible {
       outline: 1px solid $color-focus;
       outline-offset: -1px;
+    }
+
+    &::after {
+      content: url('../assets/img/icon-24-arrow_right.svg');
+      position: absolute;
+      right: rem(24);
+      top: calc(50% - 12px);
+      transition: transform .5s;
+      transform: rotate(-45deg);
+      height: rem(24);
+      width: rem(24);
+      display: none;
     }
   }
 }

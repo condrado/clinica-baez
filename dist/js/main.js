@@ -403,7 +403,7 @@ function combobox() {
       title: "Estudio de la pisada",
       url: "".concat(url, "estudios-biomecanicos.html")
     }, {
-      title: "Cirugía y tratamiento de juanetes",
+      title: "Cirugía del pie",
       url: "".concat(url, "cirugia-podologica.html")
     }, {
       title: "Ecografía del pie y tobillo",

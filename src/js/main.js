@@ -430,7 +430,7 @@ function combobox() {
         url: `${url}estudios-biomecanicos.html`,
       },
       {
-        title: "Cirugía y tratamiento de juanetes",
+        title: "Cirugía del pie",
         url: `${url}cirugia-podologica.html`,
       },
       {
