@@ -166,7 +166,7 @@ body {
   }
 
   &__item {
-    min-height: rem(64);
+    min-height: rem(59);
     display: flex;
     align-items: center;
     position: relative;
@@ -195,7 +195,7 @@ body {
     align-items: center;
     letter-spacing: 2px;
     word-spacing: 1px;
-    font-size: rem(32);
+    font-size: rem(20);
     font-family: 'Satoshi Light';
     
     @media screen and (min-width: $bp-tablet) {
@@ -669,7 +669,7 @@ body {
     word-spacing: 1px;
     align-items: center;
     min-height: rem(64);
-    font-size: rem(32);
+    font-size: rem(20);
     font-family: 'Satoshi Light';
 
     @media screen and (min-width: $bp-tablet) {
