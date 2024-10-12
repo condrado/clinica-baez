@@ -418,14 +418,15 @@ function carousel() {
       slidesToShow: 2,
       slidesToScroll: 1,
       variableWidth: true,
+      infinite: true,
       responsive: [{
         breakpoint: 1024,
         settings: {
           centerMode: true,
           arrows: false,
           infinite: true,
-          centerPadding: "140px",
-          slidesToShow: 2
+          slidesToShow: 1,
+          variableWidth: true
         }
       }]
     });

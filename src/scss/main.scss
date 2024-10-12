@@ -856,10 +856,12 @@ body {
     padding: 0 rem(18);
 
     img {
-      width: rem(254);
+      height: rem(380);
+      //   width: auto;
 
       @media screen and (min-width: $bp-tablet) {
-        width: rem(380);
+        height: rem(570);
+        // width: auto;
       }
     }
   }
@@ -1034,22 +1036,21 @@ body {
     li {
       margin: 0 rem(24);
       font-size: rem(20);
-      line-height: rem(32);
       font-family: "Satoshi light";
       font-weight: 400;
       color: $color-font-base;
+      display: block;
+      line-height: rem(32);
 
       @media screen and (min-width: $bp-tablet) {
         margin: 0 rem(40);
+        padding: 0;
+        line-height: rem(32);
       }
 
       @media screen and (min-width: $bp-desktop) {
         margin: 0 rem(103);
       }
-    }
-
-    li {
-      font-family: "Satoshi Regular";
     }
   }
 
@@ -1065,6 +1066,41 @@ body {
     padding: 0;
     list-style: none;
     font-family: "Satoshi Regular";
+  }
+
+  &__list-basic-link {
+    display: block;
+    position: relative;
+    padding-right: rem(48);
+
+    a {
+      font-size: rem(20);
+      text-decoration: none;
+      font-family: "Satoshi Regular";
+      line-height: 120%;
+      font-weight: 400;
+      color: $color-font-base;
+      display: block;
+      padding: rem(8) 0;
+  
+      @media screen and (min-width: $bp-tablet) {
+        font-size: rem(32);
+        line-height: rem(38);
+        padding: rem(8) 0;
+        display: block;
+      }
+    }
+
+    &.end {
+      margin-bottom: rem(24);
+    }
+
+    &::after {
+      content: url('../assets/img/icon-24-arrow_outward.svg');
+      position: absolute;
+      right: 0;
+      top: calc(50% - 12px)
+    }
   }
 }
 
