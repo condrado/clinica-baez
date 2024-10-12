@@ -1110,7 +1110,7 @@ body {
   margin-top: rem(80);
   flex-direction: column;
 
-  @media screen and (min-width: $bp-desktop) {
+  @media screen and (min-width: $bp-tablet) {
     flex-direction: row;
   }
 
@@ -1124,7 +1124,6 @@ body {
 
     @media screen and (min-width: $bp-tablet) {
       margin: rem(78) rem(40) rem(16);
-      
     }
 
     @media screen and (min-width: $bp-desktop) {
@@ -1136,7 +1135,7 @@ body {
     width: 100%;
     margin-bottom: rem(78);
 
-    @media screen and (min-width: $bp-desktop) {
+    @media screen and (min-width: $bp-tablet) {
       margin-bottom: 0;
       width: 50%;
     }
@@ -1176,13 +1175,10 @@ body {
     height: rem(390);
 
     @media screen and (min-width: $bp-tablet) {
-      height: rem(744);
-    }
-
-    @media screen and (min-width: $bp-desktop) {
       width: 50%;
       height: auto;
     }
+
   }
   
   &__list-basic {
@@ -1190,7 +1186,7 @@ body {
     list-style: none;
     font-family: "Satoshi Regular";
 
-    @media screen and (min-width: $bp-desktop) {
+    @media screen and (min-width: $bp-tablet) {
       margin-bottom: rem(78);
     }
   }
@@ -1201,7 +1197,7 @@ body {
     padding-right: rem(48);
 
     a {
-      font-size: rem(20);
+      font-size: rem(25);
       text-decoration: none;
       font-family: "Satoshi Regular";
       line-height: 120%;
@@ -1242,6 +1238,48 @@ body {
         transition: transform .3s;
         transform: rotate(0deg);
       }
+    }
+  }
+
+  &.light {
+    background-color: $color-bg;
+    border-top: 1px solid $color-border;
+    border-bottom: 1px solid $color-border;
+    margin-top: rem(32);
+    padding-bottom: rem(32);
+
+    @media screen and (min-width: $bp-tablet) {
+      padding-top: 0;
+      margin-top: 0;
+      border-top: 0;
+    }
+
+    .cb-card__text {
+      margin: 0;
+
+      @media screen and (min-width: $bp-tablet) {
+        margin-bottom: rem(78);
+      }
+
+      .cb-card__title {
+        margin-top: rem(40);
+
+        @media screen and (min-width: $bp-tablet) {
+          margin: rem(78) rem(40) rem(16);
+        }
+    
+        @media screen and (min-width: $bp-desktop) {
+          margin: rem(78) rem(103) rem(16);
+        }
+      }
+    }
+
+    .cb-card__list-basic {
+      margin-bottom: 0;
+    }
+
+    .cb-card__list-basic-link {
+
     }
   }
 }
