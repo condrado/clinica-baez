@@ -416,6 +416,7 @@ function combobox() {
   window.addEventListener("load", function () {
     const urlHref = window.location.href;
     let url = "";
+    
     if (!urlHref.includes("tratamientos")) {
       url = "tratamientos/";
 
