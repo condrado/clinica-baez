@@ -418,6 +418,10 @@ function combobox() {
     let url = "";
     if (!urlHref.includes("tratamientos")) {
       url = "tratamientos/";
+
+      if (urlHref.includes("cookies")) {
+        url = "../tratamientos/";
+      }
     }
 
     const options = [

@@ -395,6 +395,9 @@ function combobox() {
     var url = "";
     if (!urlHref.includes("tratamientos")) {
       url = "tratamientos/";
+      if (urlHref.includes("cookies")) {
+        url = "../tratamientos/";
+      }
     }
     var options = [{
       title: "Plantillas personalizadas",
