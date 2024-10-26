@@ -1,3 +1,5 @@
+@import "_cookie-law-info-gdpr.scss";
+@import "_cookie-law-info-public.scss";
 @import "_variables.scss";
 @import "_reset.scss";
 @import "_utilities.scss";
@@ -32,6 +34,22 @@ body {
   color: $color-font-base;
   letter-spacing: 1px;
   overflow: hidden;
+}
+
+a {
+  color: #10B5C9;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .cb-wrapper {
@@ -386,6 +404,20 @@ body {
     @media screen and (min-width: $bp-desktop) {
       padding: rem(96) rem(104) rem(8);
     }
+
+    &.visually-hidden {
+      + .cb-main__h2 {
+        padding-top: rem(48);
+
+        @media screen and (min-width: $bp-tablet) {
+          padding-top: rem(96);
+        }
+    
+        @media screen and (min-width: $bp-desktop) {
+          padding-top: rem(96);
+        }
+      }
+    }
   }
 
   &__h2 {
@@ -412,6 +444,26 @@ body {
     padding-bottom: rem(66);
   }
 
+  &__h3 {
+    font-family: "Satoshi light";
+    padding: 0 rem(24) rem(26) rem(24);
+    font-size: rem(48);
+    line-height: 120%;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    color: $color-font-title;
+    font-size: rem(18);
+
+    @media screen and (min-width: $bp-tablet) {
+      padding: 0 rem(40) rem(26) rem(40);
+      font-size: rem(32);
+    }
+
+    @media screen and (min-width: $bp-desktop) {
+      padding: 0 rem(312) rem(26) rem(104);
+    }
+  }
+
   &__p {
     padding: 0 rem(24) rem(24) rem(24);
 
@@ -421,6 +473,22 @@ body {
 
     @media screen and (min-width: $bp-desktop) {
       padding: 0 rem(616) rem(24) rem(104);
+    }
+
+    strong {
+      font-family: "Satoshi Bold";
+    }
+  }
+
+  &__ul {
+    padding: 0 rem(24) rem(24) rem(44);
+
+    @media screen and (min-width: $bp-tablet) {
+      padding: 0 rem(40) rem(24) rem(60);
+    }
+
+    @media screen and (min-width: $bp-desktop) {
+      padding: 0 rem(616) rem(24) rem(124);
     }
   }
 
@@ -1513,3 +1581,15 @@ body {
 #CybotCookiebotDialogHeader {
   display: none !important;
 } 
+
+
+.cb-paragraph {
+  margin-top: rem(22);
+
+  .cb-main__p,
+  .cb-main__ul {
+    @media screen and (min-width: $bp-desktop) {
+      padding-right: rem(424);
+    }
+  }
+}
