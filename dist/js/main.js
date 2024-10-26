@@ -541,7 +541,12 @@ function scrollBottom() {
 }
 function createCookieBar() {
   var body = document.body;
-  var cookieBar = "<div id=\"cookie-law-info-bar\" data-nosnippet=\"true\">\n                       <span>\n                         Esta web utiliza cookies para mejorar su experiencia de navegabilidad. Asumimos que aceptas el uso de \xE9stas si sigues navegando.\n                         <a role=\"button\" data-cli_action=\"accept\" id=\"cookie_action_close_header\" class=\"medium cli-plugin-button cli-plugin-main-button cookie_action_close_header cli_action_button wt-cli-accept-btn\">Aceptar</a> \n                         <a href=\"politica-de-cookies/\" id=\"CONSTANT_OPEN_URL\" target=\"_blank\" class=\"cli-plugin-main-link\">Saber m\xE1s</a>\n                       </span>\n                     </div>";
+  var urlCookies = 'politica-de-cookies';
+  var urlHref = window.location.href;
+  if (urlHref.includes("tratamientos") || urlHref.includes("cookies")) {
+    urlCookies = "../politica-de-cookies";
+  }
+  var cookieBar = "<div id=\"cookie-law-info-bar\" data-nosnippet=\"true\">\n                       <span>\n                         Esta web utiliza cookies para mejorar su experiencia de navegabilidad. Asumimos que aceptas el uso de \xE9stas si sigues navegando.\n                         <a role=\"button\" data-cli_action=\"accept\" id=\"cookie_action_close_header\" class=\"medium cli-plugin-button cli-plugin-main-button cookie_action_close_header cli_action_button wt-cli-accept-btn\">Aceptar</a> \n                         <a href=".concat(urlCookies, " id=\"CONSTANT_OPEN_URL\" target=\"_blank\" class=\"cli-plugin-main-link\">Saber m\xE1s</a>\n                       </span>\n                     </div>");
   body.insertAdjacentHTML("beforeend", cookieBar);
 }
 menuMobile();

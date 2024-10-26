@@ -590,11 +590,17 @@ function scrollBottom() {
 
 function createCookieBar() {
   const body = document.body;
+  let urlCookies = 'politica-de-cookies'
+  const urlHref = window.location.href;
+
+  if (urlHref.includes("tratamientos") || urlHref.includes("cookies")) {
+    urlCookies = "../politica-de-cookies";
+  } 
   const cookieBar = `<div id="cookie-law-info-bar" data-nosnippet="true">
                        <span>
                          Esta web utiliza cookies para mejorar su experiencia de navegabilidad. Asumimos que aceptas el uso de éstas si sigues navegando.
                          <a role="button" data-cli_action="accept" id="cookie_action_close_header" class="medium cli-plugin-button cli-plugin-main-button cookie_action_close_header cli_action_button wt-cli-accept-btn">Aceptar</a> 
-                         <a href="politica-de-cookies/" id="CONSTANT_OPEN_URL" target="_blank" class="cli-plugin-main-link">Saber más</a>
+                         <a href=${urlCookies} id="CONSTANT_OPEN_URL" target="_blank" class="cli-plugin-main-link">Saber más</a>
                        </span>
                      </div>`;
 
