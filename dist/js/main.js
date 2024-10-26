@@ -396,6 +396,12 @@ function combobox() {
     if (!urlHref.includes("tratamientos")) {
       url = "tratamientos/";
     }
+    if (!urlHref.includes("politica-de-cookies")) {
+      url = "politica-de-cookies/";
+    }
+    if (!urlHref.includes("mas-informacion-sobre-las-cookies")) {
+      url = "mas-informacion-sobre-las-cookies/";
+    }
     var options = [{
       title: "Plantillas personalizadas",
       url: "".concat(url, "soportes-plantares.html")
@@ -541,7 +547,7 @@ function scrollBottom() {
 }
 function createCookieBar() {
   var body = document.body;
-  var cookieBar = "<div id=\"cookie-law-info-bar\" data-nosnippet=\"true\">\n                       <span>\n                         Esta web utiliza cookies para mejorar su experiencia de navegabilidad. Asumimos que aceptas el uso de \xE9stas si sigues navegando.\n                         <a role=\"button\" data-cli_action=\"accept\" id=\"cookie_action_close_header\" class=\"medium cli-plugin-button cli-plugin-main-button cookie_action_close_header cli_action_button wt-cli-accept-btn\">Aceptar</a> \n                         <a href=\"/politica-de-cookies\" id=\"CONSTANT_OPEN_URL\" target=\"_blank\" class=\"cli-plugin-main-link\">Saber m\xE1s</a>\n                       </span>\n                     </div>";
+  var cookieBar = "<div id=\"cookie-law-info-bar\" data-nosnippet=\"true\">\n                       <span>\n                         Esta web utiliza cookies para mejorar su experiencia de navegabilidad. Asumimos que aceptas el uso de \xE9stas si sigues navegando.\n                         <a role=\"button\" data-cli_action=\"accept\" id=\"cookie_action_close_header\" class=\"medium cli-plugin-button cli-plugin-main-button cookie_action_close_header cli_action_button wt-cli-accept-btn\">Aceptar</a> \n                         <a href=\"politica-de-cookies/\" id=\"CONSTANT_OPEN_URL\" target=\"_blank\" class=\"cli-plugin-main-link\">Saber m\xE1s</a>\n                       </span>\n                     </div>";
   body.insertAdjacentHTML("beforeend", cookieBar);
 }
 menuMobile();
