@@ -196,6 +196,10 @@ a {
       border-top: 0;
     }
 
+    @media screen and (min-width: $bp-tablet) {
+      border-bottom-color: transparent;
+    }
+
     &:last-child {
       // border-bottom: 1px solid $color-border;
 
@@ -215,11 +219,10 @@ a {
     letter-spacing: 2px;
     word-spacing: 1px;
     font-size: rem(20);
-    font-family: 'Satoshi Light';
+    font-family: 'Satoshi Regular';
     
     @media screen and (min-width: $bp-tablet) {
       font-size: rem(14);
-      font-family: 'Satoshi Regular';
     }
 
     &:focus-visible {
@@ -421,7 +424,7 @@ a {
   }
 
   &__h2 {
-    font-family: "Satoshi light";
+    font-family: "Satoshi Regular";
     padding: 0 rem(24) rem(26) rem(24);
     font-size: rem(48);
     line-height: 120%;
@@ -774,11 +777,10 @@ a {
     align-items: center;
     min-height: rem(64);
     font-size: rem(20);
-    font-family: 'Satoshi Light';
+    font-family: 'Satoshi Regular';
 
     @media screen and (min-width: $bp-tablet) {
       font-size: rem(14);
-      font-family: "Satoshi Regular";
       min-height: rem(80);
     }
   }
@@ -814,7 +816,7 @@ a {
     text-decoration: none;
     color: $color-font-info;
     font-size: rem(20);
-    font-family: "Satoshi Light";
+    font-family: "Satoshi Regular";
     letter-spacing: 2px;
     word-spacing: 1px;
     position: relative;
