@@ -420,14 +420,6 @@ function combobox() {
       url = "tratamientos/";
     }
 
-    if (!urlHref.includes("politica-de-cookies")) {
-      url = "politica-de-cookies/";
-    }
-
-    if (!urlHref.includes("mas-informacion-sobre-las-cookies")) {
-      url = "mas-informacion-sobre-las-cookies/";
-    }
-
     const options = [
       {
         title: "Plantillas personalizadas",

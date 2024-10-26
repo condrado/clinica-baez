@@ -396,12 +396,6 @@ function combobox() {
     if (!urlHref.includes("tratamientos")) {
       url = "tratamientos/";
     }
-    if (!urlHref.includes("politica-de-cookies")) {
-      url = "politica-de-cookies/";
-    }
-    if (!urlHref.includes("mas-informacion-sobre-las-cookies")) {
-      url = "mas-informacion-sobre-las-cookies/";
-    }
     var options = [{
       title: "Plantillas personalizadas",
       url: "".concat(url, "soportes-plantares.html")
