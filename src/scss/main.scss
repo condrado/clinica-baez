@@ -107,14 +107,15 @@ a {
   padding: 0 rem(24);
   z-index: 6;
   background-color: $color-bg;
-  top: 0;
+  top: rem(-1);
   
   @media screen and (min-width: $bp-tablet) {
-    height: rem(80);
+    height: rem(79);
     padding: 0 rem(80);
     position: relative;
     border-left: 1px solid $color-border;
     border-right: 1px solid $color-border;
+    border-bottom: 0;
   }
 
   @media screen and (min-width: $bp-desktop) {
@@ -237,7 +238,7 @@ a {
   &__nav {
     position: absolute;
     right: 0;
-    top: rem(60);
+    top: rem(62);
     width: 100%;
     background-color: $color-primary;
     display: none;
@@ -269,6 +270,7 @@ a {
         top: 0;
         left: 0;
         z-index: 0;
+        border-top: 1px solid $color-border;
 
         @media screen and (min-width: $bp-tablet) {
           display: none;
@@ -956,6 +958,7 @@ a {
       &.open {
         background-color: $color-primary;
         border-bottom: 1px solid $color-border;
+        border-top: 1px solid $color-border;
         background-image: url('../assets/img/icon-24-close.svg');
       }
     }
