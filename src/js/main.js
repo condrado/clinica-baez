@@ -420,7 +420,7 @@ function combobox() {
     if (!urlHref.includes("tratamientos")) {
       url = "tratamientos/";
 
-      if (urlHref.includes("cookies")) {
+      if (urlHref.includes("cookies") || urlHref.includes("sitemap")) {
         url = "../tratamientos/";
       }
     }
@@ -599,7 +599,7 @@ function createCookieBar() {
   let urlCookies = 'politica-de-cookies'
   const urlHref = window.location.href;
 
-  if (urlHref.includes("tratamientos") || urlHref.includes("cookies")) {
+  if (urlHref.includes("tratamientos") || urlHref.includes("cookies") || urlHref.includes("sitemap")) {
     urlCookies = "../politica-de-cookies";
   } 
   const cookieBar = `<div id="cookie-law-info-bar" data-nosnippet="true">

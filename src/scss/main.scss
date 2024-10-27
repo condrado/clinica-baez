@@ -1368,7 +1368,6 @@ a {
 .cb-footer {
   background-color: $color-primary;
   border-top: 1px solid $color-border;
-  border-bottom: 1px solid $color-border;
 
   &__copy {
     border-top: 1px solid $color-border;
@@ -1603,6 +1602,26 @@ a {
   .cb-main__ul {
     @media screen and (min-width: $bp-desktop) {
       padding-right: rem(424);
+    }
+  }
+}
+
+.cb-sitemap {
+  padding-bottom: rem(80);
+
+  li {
+    list-style-type: none;
+  }
+
+  .level-0 {
+    padding-left: 0;
+  }
+
+  .level-1 {
+    padding-left: rem(24);
+
+    .lhead {
+      margin-top: rem(24);
     }
   }
 }
