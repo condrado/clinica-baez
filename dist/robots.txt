@@ -1,0 +1,13 @@
+# Bloquea todos los bots en secciones específicas
+User-agent: *
+Disallow: /private/           # Carpeta privada no accesible
+Disallow: /temp/              # Carpetas temporales o de prueba
+Disallow: /admin/             # Panel de administración
+Disallow: /cgi-bin/           # Directorio de scripts (si lo tienes)
+
+# Permitir a todos los bots el acceso a todo lo demás
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.clinicadelpiebaez.com/sitemap.xml
+

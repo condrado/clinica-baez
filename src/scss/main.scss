@@ -625,8 +625,6 @@ a {
     }
 
     &:first-child {
-      border-top: 0;
-
       @media screen and (min-width: $bp-desktop) {
         border-top: 0;
       }
@@ -810,6 +808,10 @@ a {
       top: rem(80);
       margin-top: 0;
       outline: 1px solid $color-border;
+    }
+
+    .cb-main__col:first-child {
+      border-top: 0;
     }
   }
  

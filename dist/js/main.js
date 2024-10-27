@@ -536,6 +536,7 @@ function togglePlayPause(video) {
 function scrollBottom() {
   var btnScroll = document.getElementById("toggle");
   btnScroll.addEventListener("click", () => {
+    console.log(document.body.scrollHeight);
     window.scrollTo({
       top: document.body.scrollHeight,
       behavior: "smooth"
